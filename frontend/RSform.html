@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <p class="logo-text"><a href=index.html>RecruitMetrics</a></p>
+        <button class="mobile-nav-toggle" aria-controls="nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+        <nav class="nav">
+  <section class="LSnav">
+  <a class="header-link" href="#about">About</a>
+  <a class="header-link" href="contact.html">Contact</a>
+   </section>
+  <a href="login.html" class="auth-btn login-btn">Login</a>
+  <a href="signup.html" class="auth-btn signup-btn">Sign Up</a>
+</nav>
+    </header>
+    <main>
+        <section class="slogan">
+            <h1 class="Form-heading"><span class="logocolor">RecruitScore calculator</span></h1>
+            <p class="Form-subheading">Enter your stats to see where you stand</p>
+        </section>
+        <form class="RSform" id="RSform">
+  <!-- Step 1 -->
+  <div class="form-step">
+    <label for="player-height" class="RSform-Qtext">Player height</label>
+    <div class="height-inputs">
+        <input type="number" id="player-height-feet" name="player-height-feet" placeholder="Ft" min="5" max="7" oninput="validateHeight(this)" required>
+        <input type="number" id="player-height-inches" name="player-height-inches" placeholder="Inches" min="0" max="11" oninput="validateHeight(this)" required>
+    </div>
+    <button type="button" class="next-btn" disabled>Next</button>
+    <p class="microcopy">Takes less than two minutes</p>
+</div>
+  <div class="small-divider"></div>
+
+  <!-- Step 3 -->
+  <div class="form-step">
+    <label for="state" class="RSform-Qtext">HS state</label>
+    <select id="state" name="state" required>
+      <option value="">Select a state</option>
+      <option value="AL">Alabama</option>
+       <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+         <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+           <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option> 
+            <option value="DE">Delaware</option> 
+            <option value="FL">Florida</option> 
+            <option value="GA">Georgia</option> 
+            <option value="HI">Hawaii</option> 
+            <option value="ID">Idaho</option> 
+            <option value="IL">Illinois</option> 
+            <option value="IN">Indiana</option> 
+            <option value="IA">Iowa</option> 
+            <option value="KS">Kansas</option> 
+            <option value="KY">Kentucky</option> 
+            <option value="LA">Louisiana</option> 
+            <option value="ME">Maine</option> 
+            <option value="MD">Maryland</option> 
+            <option value="MA">Massachusetts</option> 
+            <option value="MI">Michigan</option> 
+            <option value="MN">Minnesota</option> 
+            <option value="MS">Mississippi</option> 
+            <option value="MO">Missouri</option> 
+            <option value="MT">Montana</option> 
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option> 
+            <option value="NH">New Hampshire</option> 
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option> 
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option> 
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option> 
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option> 
+            <option value="TN">Tennessee</option> 
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option> 
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option> 
+            <option value="DC">District of Columbia</option> <option value="other">Other</option>
+    </select>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 4 -->
+  <div class="form-step">
+    <label for="HS-league" class="RSform-Qtext">HS league</label>
+    <select id="HS-league" name="HS-league" required>
+      <option value="">Select a league</option>
+    </select>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 5 -->
+  <div class="form-step" >
+    <label for="Classification" class="RSform-Qtext">HS classification</label>
+    <select id="Classification" name="Classification" required>
+        <option value="">Select a classification</option>
+    </select>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 6 -->
+  <div class="form-step">
+    <label for="HS-player-role" class="RSform-Qtext">HS player role</label>
+    <select id="HS-player-role" name="HS-player-role" required>
+      <option value="">Select a role</option>
+      <option value="first-option">First option</option>
+      <option value="primary-starter">2nd/3rd option</option>
+      <option value="lineup-contributor">4-6th option</option>
+      <option value="Role player">Role player</option>
+      <option value="Practice player">Practice player</option>
+    </select>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 7 -->
+  <div class="form-step">
+    <label for="HS-WP" class="RSform-Qtext">HS Win percentage</label>
+    <input class="WP-slider" type="range" id="HS-WP" name="HS-WP" min="0" max="100" value="50"
+      oninput="document.getElementById('HS-WP-value').textContent = this.value + '%'">
+    <span id="HS-WP-value" class="WP-value">50%</span>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+  
+  <!-- Step 8 -->
+  <div class="form-step">
+    <p class="Form-PSA">For this question, if your team plays independently but plays primarily against teams on one of these circuits, list that circuit.</p>
+    <label for="AAU-circuit" class="RSform-Qtext">AAU circuit</label>
+    <select id="AAU-circuit" name="AAU-circuit" required>
+      <option value="">Select a circuit</option>
+      <option value="Nike EYBL">Nike EYBL</option> 
+      <option value="Adidas 3SSB">Adidas 3SSB</option> 
+      <option value="UAA">UAA</option> 
+      <option value="EYCL">EYCL</option> 
+      <option value="MHC">MADE hoops(MHC)</option> 
+      <option value="UA rise">UA rise</option> 
+      <option value="Adidas Gold">Adidas gold</option> 
+      <option value="Puma Pro16">Puma Pro16</option> 
+      <option value="Puma NXTPRO">Puma NXTPRO</option> 
+      <option value="NB P32">NB P32</option> 
+      <option value="HGSL">HGSL</option> 
+      <option value="PBC">Premier BB circuit</option> 
+      <option value="ZGXL">ZGXL</option> 
+      <option value="Bigshots">Bigshots</option> 
+      <option value="Prep Hoops">Prep Hoops</option> 
+      <option value="NY2LA">NY2LA</option> 
+      <option value="Radar Hoops">Radar Hoops</option> 
+      <option value="HGAL">HGAL</option> 
+      <option value="MADE non circuit">MADE non circuit</option>
+      <option value="NY2LA non circuit">NY2LA non circuit</option>
+      <option value="HoopGroup non circuit">HoopGroup non circuit</option>
+      <option value="Other">Other </option> 
+      <option value="NO-AAU">No AAU</option>
+    </select>
+    </select>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 9 -->
+  <div class="form-step">
+    <label for="AAU-team-role" class="RSform-Qtext">AAU team role</label>
+    <select id="AAU-team-role" name="AAU-team-role" required>
+      <option value="">Select a role</option>
+      <option value="first-option">First option</option>
+      <option value="primary-starter">2nd/3rd option</option>
+      <option value="lineup-contributor">4-6th option</option>
+      <option value="Role player">Role player</option>
+      <option value="Practice player">Practice player</option>
+    </select>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 10 -->
+  <div class="form-step">
+    <label for="AAU-WP" class="RSform-Qtext"> AAU Win percentage</label>
+    <input class="WP-slider" type="range" id="AAU-WP" name="AAU-WP" min="0" max="100" value="50"
+      oninput="document.getElementById('AAU-WP-value').textContent = this.value + '%'">
+    <span id="AAU-WP-value" class="WP-value">50%</span>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 11 -->
+  <div class="form-step">
+    <label for="GPA" class="RSform-Qtext">GPA</label>
+    <input class="academic-stat" type="number" id="GPA" name="GPA" step="0.01" min="0" max="4.0" placeholder="e.g 3.5" required>
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 12 -->
+  <div class="form-step" >
+    <label for="SAT" class="RSform-Qtext">SAT</label>
+    <p class="Form-PSA">Click Next if you haven't taken the SAT</p>
+    <input class="academic-stat" type="number" id="SAT" name="SAT" min="400" max="1600" placeholder="e.g 1200">
+    <button type="button" class="back-btn ">Back</button>
+    <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
+  </div>
+  <div class="small-divider"></div>
+
+  <!-- Step 13 -->
+  <div class="form-step" >
+    <label for="ACT" class="RSform-Qtext">ACT</label>
+    <p class="Form-PSA">Click Calculate if you haven't taken the ACT</p>
+    <input class="academic-stat" type="number" id="ACT" name="ACT" min="12" max="36" placeholder="e.g 28">
+    <button type="button" class="back-btn ">Back</button>
+    <button type="submit" class="submit-button" id="calculateBtn">Calculate your chances</button>
+  </form>
+</main>
+    <div class="FD"></div>
+    <div class="grey-divider"></div>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo-text"><a href=index.html>RecruitMetrics</a></h2>
+      <p>Simplifying college basketball recruiting.</p>
+    </div>
+    <div class="header-footer-links">
+      <a href="#about">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+    <div class="footer-social">
+      <a href="amir.zachary.ibrahim@gmail.com" aria-label="Email">
+        <i class="fa fa-envelope" style="font-size:24px"></i>
+      </a>
+      <a href="" target="_blank" aria-label="LinkedIn">
+         <i class="fa fa-linkedin-square" style="font-size:22px"></i>
+      </a>
+        <a href="" target="_blank" aria-label="Instagram">
+             <i class="fa fa-instagram" style="font-size:24px"></i>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 RecruitMetrics. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

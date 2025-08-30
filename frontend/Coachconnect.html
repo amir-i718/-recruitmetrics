@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Index</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <p class="logo-text"><a href=index.html>RecruitMetrics</a></p>
+        <button class="mobile-nav-toggle" aria-controls="nav" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+        <nav class="nav">
+  <section class="LSnav">
+  <a class="header-link" href="#about">About</a>
+  <a class="header-link" href="contact.html">Contact</a>
+   </section>
+  <a href="login.html" class="auth-btn login-btn">Login</a>
+  <a href="signup.html" class="auth-btn signup-btn">Sign Up</a>
+</nav>
+    </header>
+    <main>
+        <h1 class="CC-heading logocolor">CoachConnect</h1>
+        <div class="school-search-bar-container">
+  <input
+    type="text"
+    id="school-search-bar"
+    class="school-search-bar"
+    placeholder="Search for a school"
+    oninput="filterColleges()"
+    autocomplete="off"
+  >
+  <!-- Place below your search bar input -->
+<ul id="school-suggestions" class="school-suggestions"></ul>
+</div>
+<!-- Toggle Menu -->
+<nav class="toggle-menu">
+  <button data-target="page1">Conferences</button>
+  <button data-target="page2">Division 1</button>
+  <button data-target="page3">Division 2</button>
+  <button data-target="page4">Division 3</button>
+</nav>
+
+<!-- Page Sections -->
+ <section id="page1" class="toggle-page">
+    <h3 class="CC-subheading"> Division 1 conferences</h3>
+        <section class="list-conferences reveal">
+            <p class="conference-item"><a href="#ASUN-colleges" class="conference-item" data-target-page="page2">ASUN</a></p>
+            <p class="conference-item"><a href="#AmericaEast-colleges" class="conference-item" data-target-page="page2">America East</a></p>
+            <p class="conference-item"><a href="#AAC-colleges" class="conference-item" data-target-page="page2">AAC</a></p>
+            <p class="conference-item"><a href="#Atlantic10-colleges" class="conference-item" data-target-page="page2">Atlantic 10</a></p>
+            <p class="conference-item"><a href="#ACC-colleges" class="conference-item" data-target-page="page2">ACC</a></p>
+            <p class="conference-item"><a href="#Big12-colleges" class="conference-item" data-target-page="page2">Big 12</a></p>
+            <p class="conference-item"><a href="#BigEast-colleges" class="conference-item" data-target-page="page2">Big East</a></p>
+            <p class="conference-item"><a href="#BigSky-colleges" class="conference-item" data-target-page="page2">Big Sky</a></p>
+            <p class="conference-item"><a href="#BigSouth-colleges" class="conference-item" data-target-page="page2">Big South</a></p>
+            <p class="conference-item"><a href="#BigTen-colleges" class="conference-item" data-target-page="page2">Big Ten</a></p>
+            <p class="conference-item"><a href="#BigWest-colleges" class="conference-item" data-target-page="page2">Big West</a></p>
+            <p class="conference-item"><a href="#CAA-colleges" class="conference-item" data-target-page="page2">CAA</a></p>
+            <p class="conference-item"><a href="#ConferenceUSA-colleges" class="conference-item" data-target-page="page2">Conference USA</a></p>
+            <p class="conference-item"><a href="#Horizon-colleges" class="conference-item" data-target-page="page2">Horizon</a></p>
+            <p class="conference-item"><a href="#IvyLeague-colleges" class="conference-item" data-target-page="page2">Ivy League</a></p>
+            <p class="conference-item"><a href="#MAAC-colleges" class="conference-item" data-target-page="page2">MAAC</a></p>
+            <p class="conference-item"><a href="#MAC-colleges" class="conference-item" data-target-page="page2">MAC</a></p>
+            <p class="conference-item"><a href="#MEAC-colleges" class="conference-item" data-target-page="page2">MEAC</a></p>
+            <p class="conference-item"><a href="#MissouriValley-colleges" class="conference-item" data-target-page="page2">Missouri Valley</a></p>
+            <p class="conference-item"><a href="#MountainWest-colleges" class="conference-item" data-target-page="page2">Mountain West</a></p>
+            <p class="conference-item"><a href="#NEC-colleges" class="conference-item" data-target-page="page2">NEC</a></p>
+            <p class="conference-item"><a href="#OhioValley-colleges" class="conference-item" data-target-page="page2">Ohio Valley</a></p>
+            <p class="conference-item"><a href="#Pac12-colleges" class="conference-item" data-target-page="page2">Pac-12</a></p>
+            <p class="conference-item"><a href="#PatriotLeague-colleges" class="conference-item" data-target-page="page2">Patriot League</a></p>
+            <p class="conference-item"><a href="#SEC-colleges" class="conference-item" data-target-page="page2">SEC</a></p>
+            <p class="conference-item"><a href="#Southern-colleges" class="conference-item" data-target-page="page2">Southern</a></p>
+            <p class="conference-item"><a href="#Southland-colleges" class="conference-item" data-target-page="page2">Southland</a></p>
+            <p class="conference-item"><a href="#SummitLeague-colleges" class="conference-item" data-target-page="page2">Summit League</a></p>
+            <p class="conference-item"><a href="#SunBelt-colleges" class="conference-item" data-target-page="page2">Sun Belt</a></p>
+            <p class="conference-item"><a href="#SWAC-colleges" class="conference-item" data-target-page="page2">SWAC</a></p>
+            <p class="conference-item"><a href="#WCC-colleges" class="conference-item" data-target-page="page2">WCC</a></p>
+            <p class="conference-item"><a href="#WAC-colleges" class="conference-item" data-target-page="page2">WAC</a></p>
+            <p class="conference-item"><a href="#Independent-colleges" class="conference-item" data-target-page="page2">Independent</a></p>
+        </section>
+        <h3 class="CC-subheading"> Division 2 conferences</h3>   
+        <section class="list-conferences reveal">
+            <p class="conference-item"><a href="#CCAA-colleges" class="conference-item" data-target-page="page3">CCAA</a></p>
+            <p class="conference-item"><a href="#CACC-colleges" class="conference-item" data-target-page="page3">CACC</a></p>
+            <p class="conference-item"><a href="#CIAA-colleges" class="conference-item" data-target-page="page3">CIAA</a></p>
+            <p class="conference-item"><a href="#Carolinas-colleges" class="conference-item" data-target-page="page3">Carolinas</a></p>
+            <p class="conference-item"><a href="#ECC-colleges" class="conference-item" data-target-page="page3">ECC</a></p>
+            <p class="conference-item"><a href="#GreatAmerican-colleges" class="conference-item" data-target-page="page3">Great American</a></p>
+            <p class="conference-item"><a href="#GLIAC-colleges" class="conference-item" data-target-page="page3">GLIAC</a></p>
+            <p class="conference-item"><a href="#GLVC-colleges" class="conference-item" data-target-page="page3">GLVC</a></p>
+            <p class="conference-item"><a href="#GMAC-colleges" class="conference-item" data-target-page="page3">GMAC</a></p>
+            <p class="conference-item"><a href="#GNAC-colleges" class="conference-item" data-target-page="page3">GNAC</a></p>
+            <p class="conference-item"><a href="#GulfSouth-colleges" class="conference-item" data-target-page="page3">Gulf South</a></p>
+            <p class="conference-item"><a href="#LoneStar-colleges" class="conference-item" data-target-page="page3">Lone Star</a></p>
+            <p class="conference-item"><a href="#MEC-colleges" class="conference-item" data-target-page="page3">MEC</a></p>
+            <p class="conference-item"><a href="#MIAA-colleges" class="conference-item" data-target-page="page3">MIAA</a></p>
+            <p class="conference-item"><a href="#Northeast10-colleges" class="conference-item" data-target-page="page3">Northeast-10</a></p>
+            <p class="conference-item"><a href="#NSIC-colleges" class="conference-item" data-target-page="page3">NSIC</a></p>
+            <p class="conference-item"><a href="#PacificWest-colleges" class="conference-item" data-target-page="page3">Pacific West</a></p>
+            <p class="conference-item"><a href="#PeachBelt-colleges" class="conference-item" data-target-page="page3">Peach Belt</a></p>
+            <p class="conference-item"><a href="#PSAC-colleges" class="conference-item" data-target-page="page3">PSAC</a></p>
+            <p class="conference-item"><a href="#RMAC-colleges" class="conference-item" data-target-page="page3">RMAC</a></p>
+            <p class="conference-item"><a href="#SouthAtlantic-colleges" class="conference-item" data-target-page="page3">South Atlantic</a></p>
+            <p class="conference-item"><a href="#SIAC-colleges" class="conference-item" data-target-page="page3">SIAC</a></p>
+            <p class="conference-item"><a href="#SunshineState-colleges" class="conference-item" data-target-page="page3">Sunshine State</a></p>
+
+        </section>
+        <h3 class="CC-subheading"> Division 3 conferences</h3>
+        <section class="list-conferences reveal">
+            <p class="conference-item"><a href="#AMCC-colleges" class="conference-item" data-target-page="page4">AMCC</a></p>
+            <p class="conference-item"><a href="#AmericanRivers-colleges" class="conference-item" data-target-page="page4">American rivers</a></p>
+            <p class="conference-item"><a href="#AmericanSouthwest-colleges" class="conference-item" data-target-page="page4">American Southwest</a></p>
+            <p class="conference-item"><a href="#AtlanticEast-colleges" class="conference-item" data-target-page="page4">Atlantic East</a></p>
+            <p class="conference-item"><a href="#Centennial-colleges" class="conference-item" data-target-page="page4">Centennial</a></p>
+            <p class="conference-item"><a href="#CUNYAC-colleges" class="conference-item" data-target-page="page4">CUNYAC</a></p>
+            <p class="conference-item"><a href="#C2C-colleges" class="conference-item" data-target-page="page4">C2C</a></p>
+            <p class="conference-item"><a href="#CCIW-colleges" class="conference-item" data-target-page="page4">CCIW</a></p>
+            <p class="conference-item"><a href="#CCS-colleges" class="conference-item" data-target-page="page4">CCS</a></p>
+            <p class="conference-item"><a href="#Commonwealth-colleges" class="conference-item" data-target-page="page4">Commonwealth</a></p>
+            <p class="conference-item"><a href="#CNE-colleges" class="conference-item" data-target-page="page4">CNE</a></p>
+            <p class="conference-item"><a href="#Empire8-colleges" class="conference-item" data-target-page="page4">Empire 8</a></p>
+            <p class="conference-item"><a href="#Freedom-colleges" class="conference-item" data-target-page="page4">Freedom</a></p>
+            <p class="conference-item"><a href="#GNAC-colleges" class="conference-item" data-target-page="page4">GNAC</a></p>
+            <p class="conference-item"><a href="#Heartland-colleges" class="conference-item" data-target-page="page4">Heartland</a></p>
+            <p class="conference-item"><a href="#Landmark-colleges" class="conference-item" data-target-page="page4">Landmark</a></p>
+            <p class="conference-item"><a href="#LibertyLeague-colleges" class="conference-item" data-target-page="page4">Liberty League</a></p>
+            <p class="conference-item"><a href="#LittleEast-colleges" class="conference-item" data-target-page="page4">Little East</a></p>
+            <p class="conference-item"><a href="#MSCAC-colleges" class="conference-item" data-target-page="page4">MSCAC</a></p>
+            <p class="conference-item"><a href="#MIAA-colleges" class="conference-item" data-target-page="page4">MIAA(Michigan)</a></p>
+            <p class="conference-item"><a href="#Midwest-colleges" class="conference-item" data-target-page="page4">Midwest</a></p>
+            <p class="conference-item"><a href="#MIAC-colleges" class="conference-item" data-target-page="page4">MIAC(Minnesota)</a></p>
+            <p class="conference-item"><a href="#NEWMAC-colleges" class="conference-item" data-target-page="page4">NEWMAC</a></p>
+            <p class="conference-item"><a href="#NESCAC-colleges" class="conference-item" data-target-page="page4">NESCAC</a></p>
+            <p class="conference-item"><a href="#NJAC-colleges" class="conference-item" data-target-page="page4">NJAC</a></p>
+            <p class="conference-item"><a href="#NorthAtlantic-colleges" class="conference-item" data-target-page="page4">North Atlantic</a></p>
+            <p class="conference-item"><a href="#NorthCoast-colleges" class="conference-item" data-target-page="page4">North Coast</a></p>
+            <p class="conference-item"><a href="#NACC-colleges" class="conference-item" data-target-page="page4">NACC</a></p>
+            <p class="conference-item"><a href="#Northwest-colleges" class="conference-item" data-target-page="page4">Northwest</a></p>
+            <p class="conference-item"><a href="#OhioAthletic-colleges" class="conference-item" data-target-page="page4">Ohio Athletic</a></p>
+            <p class="conference-item"><a href="#ODAC-colleges" class="conference-item" data-target-page="page4">ODAC</a></p>
+            <p class="conference-item"><a href="#Presidents-colleges" class="conference-item" data-target-page="page4">Presidents</a></p>
+            <p class="conference-item"><a href="#Skyline-colleges" class="conference-item" data-target-page="page4">Skyline</a></p>
+            <p class="conference-item"><a href="#SAA-colleges" class="conference-item" data-target-page="page4">SAA</a></p>
+            <p class="conference-item"><a href="#SCIAC-colleges" class="conference-item" data-target-page="page4">SCIAC</a></p>
+            <p class="conference-item"><a href="#SCAC-colleges" class="conference-item" data-target-page="page4">SCAC</a></p>
+            <p class="conference-item"><a href="#StLouis-colleges" class="conference-item" data-target-page="page4">St Louis</a></p>
+            <p class="conference-item"><a href="#SUNYAC-colleges" class="conference-item" data-target-page="page4">SUNYAC</a></p>
+            <p class="conference-item"><a href="#UnitedEast-colleges" class="conference-item" data-target-page="page4">United East</a></p>
+            <p class="conference-item"><a href="#UAA-colleges" class="conference-item" data-target-page="page4">UAA</a></p>
+            <p class="conference-item"><a href="#UpperMidwest-colleges" class="conference-item" data-target-page="page4">Upper Midwest</a></p>
+            <p class="conference-item"><a href="#USASouth-colleges" class="conference-item" data-target-page="page4">USA South</a></p>
+            <p class="conference-item"><a href="#WIAC-colleges" class="conference-item" data-target-page="page4">WIAC</a></p>
+        </section>
+    </section>
+<section id="page2" class="toggle-page"> 
+     <h3 class="CC-subheading" id="ASUN-colleges">ASUN</h3>
+            <section class="list-colleges reveal">
+            <p class="college-item" id="Austin-Peay-item"><a href="">Austin Peay</a></p>
+            <p class="college-item" id="Bellarmine-item"><a href="">Bellarmine</a></p>
+            <p class="college-item" id="Central-Arkansas-item"><a href="">Central Arkansas</a></p>
+            <p class="college-item" id="EKU-item"><a href="">EKU </a></p>
+            <p class="college-item" id="Jacksonville-item"><a href="">Jacksonville</a></p>
+            <p class="college-item" id="Lipscomb-item"><a href="">Lipscomb</a></p>
+            <p class="college-item" id="North-Alabama-item"><a href="">North Alabama</a></p>
+            <p class="college-item" id="North-Florida-item"><a href="">North Florida</a></p>
+            <p class="college-item" id="Queens-Charlotte-item"><a href="">Queens Charlotte</a></p>
+            <p class="college-item" id="Stetson-item"><a href="">Stetson</a></p>
+            <p class="college-item" id="West-Georgia-item"><a href="">West Georgia</a></p>
+        </section>
+        <h3 class="CC-subheading" id="AmericaEast-colleges">America East </h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Albany-item"><a href="">Albany</a></p>
+            <p class="college-item" id="Binghamton-item"><a href="">Binghamton</a></p>
+            <p class="college-item" id="Bryant-item"><a href="">Bryant</a></p>
+            <p class="college-item" id="Maine-item"><a href="">Maine</a></p>
+            <p class="college-item" id="UMass-Lowell-item"><a href="">UMass Lowell</a></p>
+            <p class="college-item" id="New-Hampshire-item"><a href="">New Hampshire</a></p>
+            <p class="college-item" id="NJIT-item"><a href="">NJIT</a></p>
+            <p class="college-item" id="UVM-item"><a href="">UVM</a></p>
+        </section>
+        <h3 class="CC-subheading" id="AAC-colleges">AAC </h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Charlotte-item"><a href="" >Charlotte</a></p>
+            <p class="college-item" id="ECU-item"><a href="" >ECU</a></p>
+            <p class="college-item" id="FAU-item"><a href="" >FAU</a></p>
+            <p class="college-item" id="Memphis-item"><a href="" >Memphis</a></p>
+            <p class="college-item" id="Rice-item"><a href="" >Rice</a></p>
+            <p class="college-item" id="Temple-item"><a href="" >Temple</a></p>
+            <p class="college-item" id="Tulane-item"><a href="" >Tulane</a></p>
+            <p class="college-item" id="Tulsa-item"><a href="" >Tulsa</a></p>
+            <p class="college-item" id="UAB-item"><a href="" >UAB</a></p>
+            <p class="college-item" id="North-Texas-item"><a href="" >North Texas</a></p>
+            <p class="college-item" id="USF-item"><a href="" >USF</a></p>
+            <p class="college-item" id="UTSA-item"><a href="" >UTSA</a></p>
+            <p class="college-item" id="Tulsa-item"><a href="" >Tulsa</a></p>
+            <p class="college-item" id="Wichita-State-item"><a href="" >Wichita State</a></p>
+        </section>
+        <h3 class="CC-subheading" id="Atlantic10-colleges">Atlantic 10</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Davidson-item"><a href="" >Davidson</a></p>
+            <p class="college-item" id="Dayton-item"><a href="" >Dayton</a></p>
+            <p class="college-item" id="Duquesne-item"><a href="" >Duquesne</a></p>
+            <p class="college-item" id="Fordham-item"><a href="" >Fordham</a></p>
+            <p class="college-item" id="George-Mason-item"><a href="" >George Mason</a></p>
+            <p class="college-item" id="George-Washington-item"><a href="" >George Washington</a></p>
+            <p class="college-item" id="La-Salle-item"><a href="" >La Salle</a></p>
+            <p class="college-item" id="Loyola-Chicago-item"><a href="" >Loyola Chicago</a></p>
+            <p class="college-item" id="Rhode-Island-item"><a href="" >Rhode Island</a></p>
+            <p class="college-item" id="Richmond-item"><a href="" >Richmond</a></p>
+            <p class="college-item" id="Saint-Josephs-item"><a href="" >Saint Joseph's</a></p>
+            <p class="college-item" id="Saint-Louis-item"><a href="" >Saint Louis</a></p>
+            <p class="college-item" id="St-Bonaventure-item"><a href="" >St. Bonaventure</a></p>
+            <p class="college-item" id="VCU-item"><a href="" >VCU</a></p>
+            </section>
+        <h3 class="CC-subheading" id="ACC-colleges">ACC </h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Boston-College-item"><a href="" >Boston College</a></p>
+            <p class="college-item" id="Cal-item"><a href="" >Cal</a></p>
+            <p class="college-item" id="Clemson-item"><a href="" >Clemson</a></p>
+            <p class="college-item" id="Duke-item"><a href="" >Duke</a></p>
+            <p class="college-item" id="Florida-State-item"><a href="" >Florida State</a></p>
+            <p class="college-item" id="Georgia-Tech-item"><a href="" >Georgia Tech</a></p>
+            <p class="college-item" id="Louisville-item"><a href="" >Louisville</a></p>
+            <p class="college-item" id="UMiami-item"><a href="" >UMiami</a></p>
+            <p class="college-item" id="NC-State-item"><a href="" >NC State</a></p>
+            <p class="college-item" id="Notre-Dame-item"><a href="" >Notre Dame</a></p>
+            <p class="college-item" id="Pittsburgh-item"><a href="" >Pittsburgh</a></p>
+            <p class="college-item" id="SMU-item"><a href="" >SMU</a></p>
+            <p class="college-item" id="Stanford-item"><a href="" >Stanford</a></p>
+            <p class="college-item" id="Syracuse-item"><a href="" >Syracuse</a></p>
+            <p class="college-item" id="UNC-item"><a href="" >UNC</a></p>
+            <p class="college-item" id="Virginia-item"><a href="" >Virginia</a></p>
+            <p class="college-item" id="Virginia-Tech-item"><a href="" >Virginia Tech</a></p>
+            <p class="college-item" id="Wake-Forest-item"><a href="" >Wake Forest</a></p>
+            </section>
+        <h3 class="CC-subheading" id="Big12-colleges">Big 12</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Arizona-item"><a href="" >Arizona</a></p>
+            <p class="college-item" id="Arizona-State-item"><a href="" >Arizona State</a></p>
+            <p class="college-item" id="Baylor-item"><a href="" >Baylor</a></p>
+            <p class="college-item" id="BYU-item"><a href="" >BYU</a></p>
+            <p class="college-item" id="Cincinatti-item"><a href="" >Cincinatti</a></p>
+            <p class="college-item" id="Colorado-item"><a href="" >Colorado</a></p>
+            <p class="college-item" id="Houston-item"><a href="" >Houston</a></p>
+            <p class="college-item" id="Iowa-State-item"><a href="" >Iowa State</a></p>
+            <p class="college-item" id="Kansas-item"><a href="" >Kansas</a></p>
+            <p class="college-item" id="Kansas-State-item"><a href="" >Kansas State</a></p>
+            <p class="college-item" id="Oklahoma-State-item"><a href="" >Oklahoma State</a></p>
+            <p class="college-item" id="TCU-item"><a href="" >TCU</a></p>
+            <p class="college-item" id="Texas-Tech-item"><a href="" >Texas Tech</a></p>
+            <p class="college-item" id="UCF-item"><a href="" >UCF</a></p>
+            <p class="college-item" id="Utah-item"><a href="" >Utah</a></p>
+            <p class="college-item" id="West-Virginia-item"><a href="" >West Virginia</a></p>
+        </section>
+        <h3 class="CC-subheading" id="BigEast-colleges">Big East</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Butler-item"><a href="" >Butler</a></p>
+            <p class="college-item" id="Creighton-item"><a href="" >Creighton</a></p>
+            <p class="college-item" id="DePaul-item"><a href="" >DePaul</a></p>
+            <p class="college-item" id="Georgetown-item"><a href="" >Georgetown</a></p>
+            <p class="college-item" id="Marquette-item"><a href="" >Marquette</a></p>
+            <p class="college-item" id="Providence-item"><a href="" >Providence</a></p>
+            <p class="college-item" id="St-Johns-item"><a href="" >St. John's</a></p>
+            <p class="college-item" id="Seton-Hall-item"><a href="" >Seton Hall</a></p>
+            <p class="college-item" id="UConn-item"><a href="" >UConn</a></p>
+            <p class="college-item" id="Villanova-item"><a href="" >Villanova</a></p>
+            <p class="college-item" id="Xavier-item"><a href="" >Xavier</a></p>
+            </section>
+        <h3 class="CC-subheading" id="BigSky-colleges">Big Sky</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Eastern-Washington-item"><a href="" >Eastern Washington</a></p>
+            <p class="college-item" id="Idaho-item"><a href="" >Idaho</a></p>
+            <p class="college-item" id="Idaho-State-item"><a href="" >Idaho State</a></p>
+            <p class="college-item" id="Montana-item"><a href="" >Montana</a></p>
+            <p class="college-item" id="Montana-State-item"><a href="" >Montana State</a></p>
+            <p class="college-item" id="Northern-Arizona-item"><a href="" >Northern Arizona</a></p>
+            <p class="college-item" id="Northern-Colorado-item"><a href="" >Northern Colorado</a></p>
+            <p class="college-item" id="Portland-State-item"><a href="" >Portland State</a></p>
+            <p class="college-item" id="Sacramento-State-item"><a href="" >Sacramento State</a></p>
+            <p class="college-item" id="Southern-Utah-item"><a href="" >Southern Utah</a></p>
+        </section>
+        <h3 class="CC-subheading" id="BigSouth-colleges">Big South</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Charleston-Southern-item"><a href="" >Charleston Southern</a></p>
+            <p class="college-item" id="Gardner-Webb-item"><a href="" >Gardner-Webb</a></p>
+            <p class="college-item" id="High-Point-item"><a href="" >High Point</a></p>
+            <p class="college-item" id="Longwood-item"><a href="" >Longwood</a></p>
+            <p class="college-item" id="Presbyterian-item"><a href="" >Presbyterian</a></p>
+            <p class="college-item" id="Radford-item"><a href="" >Radford</a></p>
+            <p class="college-item" id="UNC-Asheville-item"><a href="" >UNC Asheville</a></p>
+            <p class="college-item" id="USC-Upstate-item"><a href="" >USC Upstate</a></p>
+            <p class="college-item" id="Winthrop-item"><a href="" >Winthrop</a></p>
+        </section>
+        <h3 class="CC-subheading" id="BigTen-colleges">Big Ten</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Illinois-item"><a href="" >Illinois</a></p>
+            <p class="college-item" id="Indiana-item"><a href="" >Indiana</a></p>
+            <p class="college-item" id="Iowa-item"><a href="" >Iowa</a></p>
+            <p class="college-item" id="Maryland-item"><a href="" >Maryland</a></p>
+            <p class="college-item" id="Michigan-item"><a href="" >Michigan</a></p>
+            <p class="college-item" id="Michigan-State-item"><a href="" >Michigan State</a></p>
+            <p class="college-item" id="Minnesota-item"><a href="" >Minnesota</a></p>
+            <p class="college-item" id="Nebraska-item"><a href="" >Nebraska</a></p>
+            <p class="college-item" id="Northwestern-item"><a href="" >Northwestern</a></p>
+            <p class="college-item" id="Ohio-State-item"><a href="" >Ohio State</a></p>
+            <p class="college-item" id="Oregon-item"><a href="" >Oregon</a></p>
+            <p class="college-item" id="Penn-State-item"><a href="" >Penn State</a></p>
+            <p class="college-item" id="Purdue-item"><a href="" >Purdue</a></p>
+            <p class="college-item" id="Rutgers-item"><a href="" >Rutgers</a></p>
+            <p class="college-item" id="UCLA-item"><a href="" >UCLA</a></p>
+            <p class="college-item" id="USC-item"><a href="" >USC</a></p>
+            <p class="college-item" id="Washington-item"><a href="" >Washington</a></p>
+            <p class="college-item" id="Wisconsin-item"><a href="" >Wisconsin</a></p>
+        </section>
+        <h3 class="CC-subheading" id="BigWest-colleges">Big West</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Cal-Poly-item"><a href="" >Cal Poly</a></p>
+            <p class="college-item" id="Cal-State-Fullerton-item"><a href="" >Cal State Fullerton</a></p>
+            <p class="college-item" id="Cal-State-Bakersfield-item"><a href="" >Cal State Bakersfield</a></p>
+            <p class="college-item" id="Cal-State-Northridge-item"><a href="" >Cal State Northridge</a></p>
+            <p class="college-item" id="Hawaii-item"><a href="" >Hawaii</a></p>
+            <p class="college-item" id="Long-Beach-State-item"><a href="" >Long Beach State</a></p>
+            <p class="college-item" id="UC-Davis-item"><a href="" >UC Davis</a></p>
+            <p class="college-item" id="UC-Irvine-item"><a href="" >UC Irvine</a></p>
+            <p class="college-item" id="UC-Riverside-item"><a href="" >UC Riverside</a></p>
+            <p class="college-item" id="UC-San-Diego-item"><a href="" >UC San Diego</a></p>
+            <p class="college-item" id="UC-Santa-Barbara-item"><a href="" >UC Santa Barbara</a></p>
+        </section>
+        <h3 class="CC-subheading" id="CAA-colleges">CAA</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Campbell-item"><a href="" >Campbell</a></p>
+            <p class="college-item" id="College-of-Charleston-item"><a href="" >College of Charleston</a></p>
+            <p class="college-item" id="Drexel-item"><a href="" >Drexel</a></p>
+            <p class="college-item" id="Elon-item"><a href="" >Elon</a></p>
+            <p class="college-item" id="Hampton-item"><a href="" >Hampton</a></p>
+            <p class="college-item" id="Hofstra-item"><a href="" >Hofstra</a></p>
+            <p class="college-item" id="James-Madison-item"><a href="" >James Madison</a></p>
+            <p class="college-item" id="Monmouth-item"><a href="" >Monmouth</a></p>
+            <p class="college-item" id="NCA-T-item"><a href="" >NCA&T</a></p>
+            <p class="college-item" id="Northeastern-item"><a href="" >Northeastern</a></p>
+            <p class="college-item" id="Stony-Brook-item"><a href="" >Stony Brook</a></p>
+            <p class="college-item" id="Towson-item"><a href="" >Towson</a></p>
+            <p class="college-item" id="UNC-Wilmington-item"><a href="" >UNC Wilmington</a></p>
+            <p class="college-item" id="William-and-Mary-item"><a href="" >William & Mary</a></p>
+        </section>  
+        <h3 class="CC-subheading" id="ConferenceUSA-colleges">Conference USA</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Delaware-item"><a href="" >Delaware</a></p>
+            <p class="college-item" id="FIU-item"><a href="" >FIU</a></p>
+            <p class="college-item" id="Jacksonville-State-item"><a href="" >Jacksonville State</a></p>
+            <p class="college-item" id="Kennesaw-State-item"><a href="" >Kennesaw State</a></p>
+            <p class="college-item" id="Liberty-item"><a href="" >Liberty</a></p>
+            <p class="college-item" id="Louisiana-Tech-item"><a href="" >Louisiana Tech</a></p>
+            <p class="college-item" id="Middle-Tennessee-item"><a href="" >Middle Tennessee</a></p>
+            <p class="college-item" id="New-Mexico-State-item"><a href="" >New Mexico State</a></p>
+            <p class="college-item" id="Sam-Houston-item"><a href="" >Sam Houston</a></p>
+            <p class="college-item" id="UTEP-item"><a href="" >UTEP</a></p>
+            <p class="college-item" id="Western-Kentucky-item"><a href="" >Western Kentucky</a></p>
+        </section>
+        <h3 class="CC-subheading" id="Horizon-colleges">Horizon</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Cleveland-State-item"><a href="" >Cleveland State</a></p>
+            <p class="college-item" id="Detroit-Mercy-item"><a href="" >Detroit Mercy</a></p>
+            <p class="college-item" id="Green-Bay-item"><a href="" >Green Bay</a></p>
+            <p class="college-item" id="IU-Indy-item"><a href="" >IU Indy</a></p>
+            <p class="college-item" id="Milwaukee-item"><a href="" >Milwaukee</a></p>
+            <p class="college-item" id="Northern-Kentucky-item"><a href="" >Northern Kentucky</a></p>
+            <p class="college-item" id="Oakland-item"><a href="" >Oakland</a></p>
+            <p class="college-item" id="Purdue-Fort-Wayne-item"><a href="" >Purdue Fort Wayne</a></p>
+            <p class="college-item" id="Robert-Morris-item"><a href="" >Robert Morris</a></p>
+            <p class="college-item" id="Wright-State-item"><a href="" >Wright State</a></p>
+            <p class="college-item" id="Youngstown-State-item"><a href="" >Youngstown State</a></p>
+        </section>
+        <h3 class="CC-subheading" id="IvyLeague-colleges">Ivy League</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Brown-item"><a href="" >Brown</a></p>
+            <p class="college-item" id="Columbia-item"><a href="" >Columbia</a></p>
+            <p class="college-item" id="Cornell-item"><a href="" >Cornell</a></p>
+            <p class="college-item" id="Dartmouth-item"><a href="" >Dartmouth</a></p>
+            <p class="college-item" id="Harvard-item"><a href="" >Harvard</a></p>
+            <p class="college-item" id="Penn-item"><a href="" >Penn</a></p>
+            <p class="college-item" id="Princeton-item"><a href="" >Princeton</a></p>
+            <p class="college-item" id="Yale-item"><a href="" >Yale</a></p>
+        </section>
+        <h3 class="CC-subheading" id="MAAC-colleges">MAAC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Canisius-item"><a href="" >Canisius</a></p>
+            <p class="college-item" id="Fairfield-item"><a href="" >Fairfield</a></p>
+            <p class="college-item" id="Iona-item"><a href="" >Iona</a></p>
+            <p class="college-item" id="Manhattan-item"><a href="" >Manhattan</a></p>
+            <p class="college-item" id="Marist-item"><a href="" >Marist</a></p>
+            <p class="college-item" id="Merrimackh-item"><a href="" >Merrimackh</a></p>
+            <p class="college-item" id="Mount-St-Marys-item"><a href="" >Mount St. Mary's</a></p>
+            <p class="college-item" id="Niagara-item"><a href="" >Niagara</a></p>
+            <p class="college-item" id="Quinnipiac-item"><a href="" >Quinnipiac</a></p>
+            <p class="college-item" id="Rider-item"><a href="" >Rider</a></p>
+            <p class="college-item" id="Sacred-Heart-item"><a href="" >Sacred Heart</a></p>
+            <p class="college-item" id="Saint-Peters-item"><a href="" >Saint Peter's</a></p>
+            <p class="college-item" id="Siena-item"><a href="" >Siena</a></p>
+        </section>
+        <h3 class="CC-subheading" id="MAC-colleges">MAC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Akron-item"><a href="" >Akron</a></p>
+            <p class="college-item" id="Ball-State-item"><a href="" >Ball State</a></p>
+            <p class="college-item" id="Bowling-Green-item"><a href="" >Bowling Green</a></p>
+            <p class="college-item" id="Buffalo-item"><a href="" >Buffalo</a></p>
+            <p class="college-item" id="Central-Michigan-item"><a href="" >Central Michigan</a></p>
+            <p class="college-item" id="Eastern-Michigan-item"><a href="" >Eastern Michigan</a></p>
+            <p class="college-item" id="Kent-State-item"><a href="" >Kent State</a></p>
+            <p class="college-item" id="Miami-OH-item"><a href="" >Miami (OH)</a></p>
+            <p class="college-item" id="Northern-Illinois-item"><a href="" >Northern Illinois</a></p>
+            <p class="college-item" id="Ohio-item"><a href="" >Ohio</a></p>
+            <p class="college-item" id="Toledo-item"><a href="" >Toledo</a></p>
+            <p class="college-item" id="UMASS-item"><a href="" >UMASS</a></p>
+            <p class="college-item" id="Western-Michigan-item"><a href="" >Western Michigan</a></p>
+        </section>
+        <h3 class="CC-subheading" id="MEAC-colleges">MEAC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Coppin-State-item"><a href="" >Coppin State</a></p>
+            <p class="college-item" id="Delaware-State-item"><a href="" >Delaware State</a></p>
+            <p class="college-item" id="Howard-item"><a href="" >Howard</a></p>
+            <p class="college-item" id="Maryland-Eastern-Shore-item"><a href="" >Maryland Eastern Shore</a></p>
+            <p class="college-item" id="Morgan-State-item"><a href="" >Morgan State</a></p>
+            <p class="college-item" id="Norfolk-State-item"><a href="" >Norfolk State</a></p>
+            <p class="college-item" id="North-Carolina-Central-item"><a href="" >North Carolina Central</a></p>
+            <p class="college-item" id="South-Carolina-State-item"><a href="" >South Carolina State</a></p>
+        </section>
+        <h3 class="CC-subheading" id="MissouriValley-colleges">Missouri Valley</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Bradley-item"><a href="" >Bradley</a></p>
+            <p class="college-item" id="Drake-item"><a href="" >Drake</a></p>
+            <p class="college-item" id="Evansville-item"><a href="" >Evansville</a></p>
+            <p class="college-item" id="Illinois-State-item"><a href="" >Illinois State</a></p>
+            <p class="college-item" id="Indiana-State-item"><a href="" >Indiana State</a></p>
+            <p class="college-item" id="Loyola-Chicago-item"><a href="" >Loyola Chicago</a></p>
+            <p class="college-item" id="Missouri-State-item"><a href="" >Missouri State</a></p>
+            <p class="college-item" id="Murray-State-item"><a href="" >Murray State</a></p>
+            <p class="college-item" id="Northern-Iowa-item"><a href="" >Northern Iowa</a></p>
+            <p class="college-item" id="Southern-Illinois-item"><a href="" >Southern Illinois</a></p>
+            <p class="college-item" id="Valparaiso-item"><a href="" >Valparaiso</a></p>
+            <p class="college-item" id="UIC-item"><a href="" >UIC</a></p>
+            </section>
+        <h3 class="CC-subheading" id="MountainWest-colleges">Mountain West</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Air-Force-item"><a href="" >Air Force</a></p>
+            <p class="college-item" id="Boise-State-item"><a href="" >Boise State</a></p>
+            <p class="college-item" id="Colorado-State-item"><a href="" >Colorado State</a></p>
+            <p class="college-item" id="Fresno-State-item"><a href="" >Fresno State</a></p>
+            <p class="college-item" id="Nevada-item"><a href="" >Nevada</a></p>
+            <p class="college-item" id="New-Mexico-item"><a href="" >New Mexico</a></p>
+            <p class="college-item" id="San-Diego-State-item"><a href="" >San Diego State</a></p>
+            <p class="college-item" id="San-Jose-State-item"><a href="" >San Jose State</a></p>
+            <p class="college-item" id="UNLV-item"><a href="" >UNLV</a></p>
+            <p class="college-item" id="Utah-State-item"><a href="" >Utah State</a></p>
+            <p class="college-item" id="Wyoming-item"><a href="" >Wyoming</a></p>
+        </section>
+        <h3 class="CC-subheading" id="NEC-colleges">NEC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="CCSU-item"><a href="" >CCSU</a></p>
+            <p class="college-item" id="Fairleigh-Dickinson-item"><a href="" >Fairleigh Dickinson</a></p>
+            <p class="college-item" id="Le-Moyne-item"><a href="" >Le Moyne</a></p>
+            <p class="college-item" id="LIU-item"><a href="" >LIU</a></p>
+            <p class="college-item" id="Mercyhurst-item"><a href="" >Mercyhurst</a></p>
+            <p class="college-item" id="NJIT-item"><a href="" >NJIT</a></p>
+            <p class="college-item" id="St-Francis-PA-item"><a href="" >St. Francis PA</a></p>
+            <p class="college-item" id="Stonehill-item"><a href="" >Stonehill</a></p>
+            <p class="college-item" id="Wagner-item"><a href="" >Wagner</a></p>
+        </section>
+        <h3 class="CC-subheading" id="OhioValley-colleges">Ohio Valley</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Eastern-Illinois-item"><a href="" >Eastern Illinois</a></p>
+            <p class="college-item" id="Lindenwood-item"><a href="" >Lindenwood</a></p>
+            <p class="college-item" id="Little-Rock-item"><a href="" >Little Rock</a></p>
+            <p class="college-item" id="Morehead-State-item"><a href="" >Morehead State</a></p>
+            <p class="college-item" id="Southeast-Missouri-State-item"><a href="" >Southeast Missouri State</a></p>
+            <p class="college-item" id="Southern-Illinois-Edwardsville-item"><a href="" >Southern Illinois Edwardsville</a></p>
+            <p class="college-item" id="Southern-Indiana-item"><a href="" >Southern Indiana</a></p>
+            <p class="college-item" id="Tennessee-State-item"><a href="" >Tennessee State</a></p>
+            <p class="college-item" id="Tennessee-Tech-item"><a href="" >Tennessee Tech</a></p>
+            <p class="college-item" id="UT-Martin-item"><a href="" >UT Martin</a></p>
+            <p class="college-item" id="Western-Illinois-item"><a href="" >Western Illinois</a></p>
+        </section>
+        <h3 class="CC-subheading" id="PatriotLeague-colleges">Patriot league</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="American-University-item"><a href="" >American University</a></p>
+            <p class="college-item" id="Army-item"><a href="" >Army</a></p>
+            <p class="college-item" id="Boston-University-item"><a href="" >Boston University</a></p>
+            <p class="college-item" id="Bucknell-item"><a href="" >Bucknell</a></p>
+            <p class="college-item" id="Colgate-item"><a href="" >Colgate</a></p>
+            <p class="college-item" id="Holy-Cross-item"><a href="" >Holy Cross</a></p>
+            <p class="college-item" id="Lafayette-item"><a href="" >Lafayette</a></p>
+            <p class="college-item" id="Lehigh-item"><a href="" >Lehigh</a></p>
+            <p class="college-item" id="Loyola-MD-item"><a href="" >Loyola MD</a></p>
+            <p class="college-item" id="Navy-item"><a href="" >Navy</a></p>
+        </section>
+        <h3 class="CC-subheading" id="SEC-colleges">SEC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Alabama-item"><a href="" >Alabama</a></p>
+            <p class="college-item" id="Arkansas-item"><a href="" >Arkansas</a></p>
+            <p class="college-item" id="Auburn-item"><a href="" >Auburn</a></p>
+            <p class="college-item" id="Florida-item"><a href="" >Florida</a></p>
+            <p class="college-item" id="Georgia-item"><a href="" >Georgia</a></p>
+            <p class="college-item" id="Kentucky-item"><a href="" >Kentucky</a></p>
+            <p class="college-item" id="LSU-item"><a href="" >LSU</a></p>
+            <p class="college-item" id="Mississippi-State-item"><a href="" >Mississippi State</a></p>
+            <p class="college-item" id="Missouri-item"><a href="" >Missouri</a></p>
+            <p class="college-item" id="Oklahoma-item"><a href="" >Oklahoma</a></p>
+            <p class="college-item" id="Ole-Miss-item"><a href="" >Ole Miss</a></p>
+            <p class="college-item" id="South-Carolina-item"><a href="" >South Carolina</a></p>
+            <p class="college-item" id="Tennessee-item"><a href="" >Tennessee</a></p>
+            <p class="college-item" id="Texas-item"><a href="" >Texas</a></p>
+            <p class="college-item" id="Texas-AM-item"><a href="" >Texas A&M</a></p>
+            <p class="college-item" id="Vanderbilt-item"><a href="" >Vanderbilt</a></p>
+        </section>
+        <h3 class="CC-subheading" id="Southern-colleges">Southern</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Chattanooga-item"><a href="" >Chattanooga</a></p>
+            <p class="college-item" id="ETSU-item"><a href="" >ETSU</a></p>
+            <p class="college-item" id="Furman-item"><a href="" >Furman</a></p>
+            <p class="college-item" id="Mercer-item"><a href="" >Mercer</a></p>
+            <p class="college-item" id="Samford-item"><a href="" >Samford</a></p>
+            <p class="college-item" id="The-Citadel-item"><a href="" >The Citadel</a></p>
+            <p class="college-item" id="UNC-Greensboro-item"><a href="" >UNC Greensboro</a></p>
+            <p class="college-item" id="VMI-item"><a href="" >VMI</a></p>
+            <p class="college-item" id="WCU-item"><a href="" >WCU</a></p>
+            <p class="college-item" id="Wofford-item"><a href="" >Wofford</a></p>
+        </section>
+        <h3 class="CC-subheading" id="Southland-colleges">Southland</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="East-Texas-AM-item"><a href="" >East Texas A&M</a></p>
+            <p class="college-item" id="Houston-Christian-item"><a href="" >Houston Christian</a></p>
+            <p class="college-item" id="Incarnate-Word-item"><a href="" >Incarnate Word</a></p>
+            <p class="college-item" id="Lamar-item"><a href="" >Lamar</a></p>
+            <p class="college-item" id="McNeese-item"><a href="" >McNeese</a></p>
+            <p class="college-item" id="New-Orleans-item"><a href="" >New Orleans</a></p>
+            <p class="college-item" id="Nicholls-item"><a href="" >Nicholls</a></p>
+            <p class="college-item" id="Northwestern-State-item"><a href="" >Northwestern State</a></p>
+            <p class="college-item" id="Southeastern-Louisiana-item"><a href="" >Southeastern Louisiana</a></p>
+            <p class="college-item" id="Texas-AM-Corpus-Christi-item"><a href="" >Texas A&M Corpus Christi</a></p>
+            <p class="college-item" id="UTRGV-item"><a href="" >UTRGV</a></p>
+        </section>
+        <h3 class="CC-subheading" id="SummitLeague-colleges">Summit League</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Denver-item"><a href="" >Denver</a></p>
+            <p class="college-item" id="Kansas-City-item"><a href="" >Kansas City</a></p>
+            <p class="college-item" id="North-Dakota-item"><a href="" >North Dakota</a></p>
+            <p class="college-item" id="North-Dakota-State-item"><a href="" >North Dakota State</a></p>
+            <p class="college-item" id="Omaha-item"><a href="" >Omaha</a></p>
+            <p class="college-item" id="Oral-Roberts-item"><a href="" >Oral Roberts</a></p>
+            <p class="college-item" id="South-Dakota-item"><a href="" >South Dakota</a></p>
+            <p class="college-item" id="South-Dakota-State-item"><a href="" >South Dakota State</a></p>
+            <p class="college-item" id="St-Thomas-item"><a href="" >St Thomas</a></p>
+            </section>
+        <h3 class="CC-subheading" id="SunBelt-colleges">Sun Belt</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Appalachian-State-item"><a href="" >Appalachian State</a></p>
+            <p class="college-item" id="Arkansas-State-item"><a href="" >Arkansas State</a></p>
+            <p class="college-item" id="Coastal-Carolina-item"><a href="" >Coastal Carolina</a></p>
+            <p class="college-item" id="Georgia-Southern-item"><a href="" >Georgia Southern</a></p>
+            <p class="college-item" id="Georgia-State-item"><a href="" >Georgia State</a></p>
+            <p class="college-item" id="James-Madison-item"><a href="" >James Madison</a></p>
+            <p class="college-item" id="Louisiana-item"><a href="" >Louisiana</a></p>
+            <p class="college-item" id="Louisiana-Monroe-item"><a href="" >Louisiana Monroe</a></p>
+            <p class="college-item" id="Marshall-item"><a href="" >Marshall</a></p>
+            <p class="college-item" id="Old-Dominion-item"><a href="" >Old Dominion</a></p>
+            <p class="college-item" id="South-Alabama-item"><a href="" >South Alabama</a></p>
+            <p class="college-item" id="Southern-Miss-item"><a href="" >Southern Miss</a></p>
+            <p class="college-item" id="Texas-State-item"><a href="" >Texas State</a></p>
+            <p class="college-item" id="Troy-item"><a href="" >Troy</a></p>
+            </section>
+        <h3 class="CC-subheading" id="SWAC-colleges">SWAC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Alabama-AM-item"><a href="" >Alabama A&M</a></p>
+            <p class="college-item" id="Alabama-State-item"><a href="" >Alabama State</a></p>
+            <p class="college-item" id="Alcorn-State-item"><a href="" >Alcorn State</a></p>
+            <p class="college-item" id="Arkansas-Pine-Bluff-item"><a href="" >Arkansas Pine Bluff</a></p>
+            <p class="college-item" id="Bethune-Cookman-item"><a href="" >Bethune-Cookman</a></p>
+            <p class="college-item" id="Florida-AM-item"><a href="" >Florida A&M</a></p>
+            <p class="college-item" id="Grambling-State-item"><a href="" >Grambling State</a></p>
+            <p class="college-item" id="Jackson-State-item"><a href="" >Jackson State</a></p>
+            <p class="college-item" id="Mississippi-Valley-State-item"><a href="" >Mississippi Valley State</a></p>
+            <p class="college-item" id="Prairie-View-AM-item"><a href="" >Prairie View A&M</a></p>
+            <p class="college-item" id="Southern-University-item"><a href="" >Southern University</a></p>
+            <p class="college-item" id="Texas-Southern-item"><a href="" >Texas Southern</a></p>
+            </section>
+        <h3 class="CC-subheading" id="WCC-colleges">WCC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Gonzaga-item"><a href="" >Gonzaga</a></p>
+            <p class="college-item" id="LMU-item"><a href="" >LMU</a></p>
+            <p class="college-item" id="Oregon-State-item"><a href="" >Oregon State</a></p>
+            <p class="college-item" id="Pacific-item"><a href="" >Pacific</a></p>
+            <p class="college-item" id="Pepperdine-item"><a href="" >Pepperdine</a></p>
+            <p class="college-item" id="Portland-item"><a href="" >Portland</a></p>
+            <p class="college-item" id="San-Diego-item"><a href="" >San Diego</a></p>
+            <p class="college-item" id="San-Francisco-item"><a href="" >San Francisco</a></p>
+            <p class="college-item" id="Santa-Clara-item"><a href="" >Santa Clara</a></p>
+            <p class="college-item" id="St-Marys-item"><a href="" >St. Mary's</a></p>
+            <p class="college-item" id="Washington-State-item"><a href="" >Washington State</a></p>
+        </section>
+        <h3 class="CC-subheading" id="WAC-colleges">WAC</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Abeline-Chrisitan-item"><a href="" >Abeline Chrisitan</a></p>
+            <p class="college-item" id="California-Baptist-item"><a href="" >California Baptist</a></p>
+            <p class="college-item" id="Grand-Canyon-item"><a href="" >Grand Canyon</a></p>
+            <p class="college-item" id="Southern-Utah-item"><a href="" >Southern Utah</a></p>
+            <p class="college-item" id="Seattle-item"><a href="" >Seattle</a></p>
+            <p class="college-item" id="Tarleton-State-item"><a href="" >Tarleton State</a></p>
+            <p class="college-item" id="UT-Arlington-item"><a href="" >UT Arlington</a></p>
+            <p class="college-item" id="Utah-Tech-item"><a href="" >Utah Tech</a></p>
+            <p class="college-item" id="Utah-Valley-item"><a href="" >Utah Valley</a></p>
+        </section>
+        <h3 class="CC-subheading">Independent</h3>
+        <section class="list-colleges reveal">
+            <p class="college-item" id="Chicago-State-item"><a href="" >Chicago State</a></p>
+        </section>
+</section>
+<section id="page3" class="toggle-page">
+    <h3 class="CC-subheading" id="CCAA-colleges">CCAA</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Cal-State-Fullerton-item"><a href="" >Cal Poly Humboldt</a></p>
+        <p class="college-item" id="Cal-State-Northridge-item"><a href="" >Cal Poly Pomona</a></p>
+        <p class="college-item" id="Cal-State-Chico-item"><a href="" >Cal State Chico</a></p>
+        <p class="college-item" id="Cal-State-Dominguez-Hills-item"><a href="" >Cal State Dominguez Hills</a></p>
+        <p class="college-item" id="Cal-State-East-Bay-item"><a href="" >Cal State East Bay</a></p>
+        <p class="college-item" id="Cal-State-LA-item"><a href="" >Cal State LA</a></p>
+        <p class="college-item" id="Cal-State-Monterey-Bay-item"><a href="" >Cal State Monterey Bay</a></p>
+        <p class="college-item" id="Cal-State-San-Bernardino-item"><a href="" >Cal State San Bernardino</a></p>
+        <p class="college-item" id="Cal-State-San-Marcos-item"><a href="" >Cal State San Marcos</a></p>
+        <p class="college-item" id="San-Francisco-State-item"><a href="" >San Francisco State</a></p>
+        <p class="college-item" id="Sonoma-State-item"><a href="" >Sonoma State</a></p>
+        <p class="college-item" id="San-Jose-State-item"><a href="" >Stanislaus State</a></p>
+    </section>
+    <h3 class="CC-subheading" id="CACC-colleges">CACC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Bloomfield-item"><a href="" >Bloomfield</a></p>
+        <p class="college-item" id="Bridgeport-item"><a href="" >Bridgeport</a></p>
+        <p class="college-item" id="Caldwell-item"><a href="" >Caldwell</a></p>
+        <p class="college-item" id="Chestnut-Hill-item"><a href="" >Chestnut Hill</a></p>
+        <p class="college-item" id="Dominican-item"><a href="" >Dominican</a></p>
+        <p class="college-item" id="Felician-item"><a href="" >Felician</a></p>
+        <p class="college-item" id="Georgian-Court-item"><a href="" >Georgian Court</a></p>
+        <p class="college-item" id="Goldey-Beacom-item"><a href="" >Goldey Beacom</a></p>
+        <p class="college-item" id="Holy-Family-item"><a href="" >Holy Family</a></p>
+        <p class="college-item" id="Jefferson-item"><a href="" >Jefferson</a></p>
+        <p class="college-item" id="Post-item"><a href="" >Post</a></p>
+        <p class="college-item" id="Wilmington-item"><a href="" >Wilmington</a></p>
+    </section>
+    <h3 class="CC-subheading" id="CIAA-colleges">CIAA</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Bluefield-item"><a href="" >Bluefield</a></p>
+        <p class="college-item" id="Bowie-State-item"><a href="" >Bowie State</a></p>
+        <p class="college-item" id="Claflin-item"><a href="" >Claflin</a></p>
+        <p class="college-item" id="Elizabeth-City-State-item"><a href="" >Elizabeth City State</a></p>
+        <p class="college-item" id="Fayetteville-State-item"><a href="" >Fayetteville State</a></p>
+        <p class="college-item" id="Lincoln(Pa)-item"><a href="" >Lincoln (Pa.)</a></p>
+        <p class="college-item" id="Livingstone-item"><a href="" >Livingstone</a></p>
+        <p class="college-item" id="Johnson-C-Smith-item"><a href="" >Johnson C. Smith</a></p>
+        <p class="college-item" id="Shaw-item"><a href="" >Shaw</a></p>
+        <p class="college-item" id="Virginia-State-item"><a href="" >Virginia State</a></p>
+        <p class="college-item" id="Virginia-Union-item"><a href="" >Virginia Union</a></p>
+        <p class="college-item" id="Winston-Salem-State-item"><a href="" >Winston Salem State</a></p>
+    </section>  
+    <h3 class="CC-subheading" id="Carolinas-colleges">Carolinas</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Barton-item"><a href="" >Barton</a></p>
+        <p class="college-item" id="Belmont-Abbey-item"><a href="" >Belmont Abbey</a></p>
+        <p class="college-item" id="Chowan-item"><a href="" >Chowan</a></p>
+        <p class="college-item" id="Converse-item"><a href="" >Converse</a></p>
+        <p class="college-item" id="Emmanuel-item"><a href="" >Emmanuel</a></p>
+        <p class="college-item" id="Erskine-item"><a href="" >Erskine</a></p>
+        <p class="college-item" id="Francis-Marion-item"><a href="" >Francis Marion</a></p>
+        <p class="college-item" id="Lenoir-Rhyne-item"><a href="" >Lenoir Rhyne</a></p>
+        <p class="college-item" id="King-item"><a href="" >King</a></p>
+        <p class="college-item" id="Mount-Olive-item"><a href="" >Mount Olive</a></p>
+        <p class="college-item" id="North-Greenville-item"><a href="" >North Greenville</a></p>
+        <p class="college-item" id="Shorter-item"><a href="" >Shorter</a></p>
+        <p class="college-item" id="Southern-Wesleyan-item"><a href="" >Southern Wesleyan</a></p>
+        <p class="college-item" id="UNC-Pembroke-item"><a href="" >UNC Pembroke</a></p>
+        <p class="college-item" id="Young-Harris-item"><a href="" >Young Harris</a></p>
+    </section>
+    <h3 class="CC-subheading" id="ECC-colleges">ECC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Daemen-item"><a href="" >Daemen</a></p>
+        <p class="college-item" id="District-of-Columbia-item"><a href="" >District of Columbia</a></p>
+        <p class="college-item" id="D'Youville-item"><a href="" >D'Youville</a></p>
+        <p class="college-item" id="Mercy-item"><a href="" >Mercy</a></p>
+        <p class="college-item" id="Molloy-item"><a href="" >Molloy</a></p>
+        <p class="college-item" id="Queens(NY)-item"><a href="" >Queens(NY)</a></p>
+        <p class="college-item" id="Roberts-Wesleyan-item"><a href="" >Roberts Wesleyan</a></p>
+        <p class="college-item" id="St.-Thomas-Aquinas-item"><a href="" >St. Thomas Aquinas</a></p>
+    </section>
+    <h3 class="CC-subheading" id="GLIAC-colleges">GLIAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Davenport-item"><a href="" >Davenport</a></p>
+        <p class="college-item" id="Ferris-State-item"><a href="" >Ferris State</a></p>
+        <p class="college-item" id="Grand-Valley-State-item"><a href="" >Grand Valley State</a></p>
+        <p class="college-item" id="Lake-Superior-State-item"><a href="" >Lake Superior State</a></p>
+        <p class="college-item" id="Michigan-Tech-item"><a href="" >Michigan Tech</a></p>
+        <p class="college-item" id="Northern-Michigan-item"><a href="" >Northern Michigan</a></p>
+        <p class="college-item" id="Parkside-item"><a href="" >Parkside</a></p>
+        <p class="college-item" id="Purdue-Northwest-item"><a href="" >Purdue Northwest</a></p>
+        <p class="college-item" id="Roosevelt-item"><a href="" >Roosevelt</a></p>
+        <p class="college-item" id="Saginaw-Valley-State-item"><a href="" >Saginaw Valley State</a></p>
+        <p class="college-item" id="Wayne-State-item"><a href="" >Wayne State</a></p>
+    </section>
+    <h3 class="CC-subheading" id="GLVC-colleges">GLVC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Drury-item"><a href="" >Drury</a></p>
+        <p class="college-item" id="Illinois-Springfield-item"><a href="" >Illinois Springfield</a></p>
+        <p class="college-item" id="Indianapolis-item"><a href="" >Indianapolis</a></p>
+        <p class="college-item" id="Lewis-item"><a href="" >Lewis</a></p>
+        <p class="college-item" id="Lincoln-item"><a href="" >Lincoln</a></p>
+        <p class="college-item" id="Maryville-item"><a href="" >Maryville</a></p>
+        <p class="college-item" id="McKendree-item"><a href="" >McKendree</a></p>
+        <p class="college-item" id="Missouri-S&T-item"><a href="" >Missouri S&T</a></p>
+        <p class="college-item" id="Missouri-St.-Louis-item"><a href="" >Missouri St. Louis</a></p>
+        <p class="college-item" id="Quincy-item"><a href="" >Quincy</a></p>
+        <p class="college-item" id="Rockhurst-item"><a href="" >Rockhurst</a></p>
+        <p class="college-item" id="Southwest-Baptist-item"><a href="" >Southwest Baptist</a></p>
+        <p class="college-item" id="Truman-item"><a href="" >Truman</a></p>
+        <p class="college-item" id="Upper-Iowa-item"><a href="" >Upper Iowa</a></p>
+        <p class="college-item" id="William-Jewell-item"><a href="" >William Jewell</a></p>
+    </section>
+    <h3 class="CC-subheading" id="GMAC-colleges">GMAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Ashland-item"><a href="" >Ashland</a></p>
+        <p class="college-item" id="Cedarville-item"><a href="" >Cedarville</a></p>
+        <p class="college-item" id="Findlay-item"><a href="" >Findlay</a></p>
+        <p class="college-item" id="Hillsdale-item"><a href="" >Hillsdale</a></p>
+        <p class="college-item" id="Kentucky-Wesleyan-item"><a href="" >Kentucky Wesleyan</a></p>
+        <p class="college-item" id="Lake-Erie-item"><a href="" >Lake Erie</a></p>
+        <p class="college-item" id="Malone-item"><a href="" >Malone</a></p>
+        <p class="college-item" id="Northwood-item"><a href="" >Northwood</a></p>
+        <p class="college-item" id="Ohio-Dominican-item"><a href="" >Ohio Dominican</a></p>
+        <p class="college-item" id="Tiffin-item"><a href="" >Tiffin</a></p>
+        <p class="college-item" id="Thomas-More-item"><a href="" >Thomas More</a></p>
+        <p class="college-item" id="Walsh-item"><a href="" >Walsh</a></p>
+    </section>
+    <h3 class="CC-subheading" id="GNAC-colleges">GNAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Alaska-Anchorage-item"><a href="" >Alaska Anchorage</a></p>
+        <p class="college-item" id="Alaska-Fairbanks-item"><a href="" >Alaska Fairbanks</a></p>
+        <p class="college-item" id="Central-Washington-item"><a href="" >Central Washington</a></p>
+        <p class="college-item" id="Montana-State-Billings-item"><a href="" >Montana State Billings</a></p>
+        <p class="college-item" id="Northwest-Nazarene-item"><a href="" >Northwest Nazarene</a></p>
+        <p class="college-item" id="Saint-Martin's-item"><a href="" >Saint Martin's</a></p>
+        <p class="college-item" id="Seattle-Pacific-item"><a href="" >Seattle Pacific</a></p>
+        <p class="college-item" id="Simon-Fraser-item"><a href="" >Simon Fraser</a></p>
+        <p class="college-item" id="Western-Oregon-item"><a href="" >Western Oregon</a></p>
+        <p class="college-item" id="Western-Washington-item"><a href="" >Western Washington</a></p>
+    </section>
+    <h3 class="CC-subheading" id="GreatAmerican-colleges">Great American</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Arkansas-Monticello-item"><a href="" >Arkansas Monticello</a></p>
+        <p class="college-item" id="Arkansas-Tech-item"><a href="" >Arkansas Tech</a></p>
+        <p class="college-item" id="East-Central-Oklahoma-item"><a href="" >East Central Oklahoma</a></p>
+        <p class="college-item" id="Harding-item"><a href="" >Harding</a></p>
+        <p class="college-item" id="Henderson-State-item"><a href="" >Henderson State</a></p>
+        <p class="college-item" id="Northwestern-Oklahoma-State-item"><a href="" >Northwestern Oklahoma State</a></p>
+        <p class="college-item" id="Oklahoma-Baptist-item"><a href="" >Oklahoma Baptist</a></p>
+        <p class="college-item" id="Ouachita-Baptist-item"><a href="" >Ouachita Baptist</a></p>
+        <p class="college-item" id="Southeastern-Oklahoma-State-item"><a href="" >Southeastern Oklahoma State</a></p>
+        <p class="college-item" id="Southern-Arkansas-item"><a href="" >Southern Arkansas</a></p>
+        <p class="college-item" id="Southern-Nazarene-item"><a href="" >Southern Nazarene</a></p>
+        <p class="college-item" id="Southwestern-Oklahoma-State-item"><a href="" >Southwestern Oklahoma State</a></p>
+        
+    </section>
+    <h3 class="CC-subheading" id="GulfSouth-colleges">Gulf South</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Auburn-Montgomery-item"><a href="" >Auburn Montgomery</a></p>
+        <p class="college-item" id="Christian-Brothers-item"><a href="" >Christian Brothers</a></p>
+        <p class="college-item" id="Delta-State-item"><a href="" >Delta State</a></p>
+        <p class="college-item" id="Lee-item"><a href="" >Lee</a></p>
+        <p class="college-item" id="Mississippi-College-item"><a href="" >Mississippi College</a></p>
+        <p class="college-item" id="Montevallo-item"><a href="" >Montevallo</a></p>
+        <p class="college-item" id="Trevecca-Nazarene-item"><a href="" >Trevecca Nazarene</a></p>
+        <p class="college-item" id="UAH-item"><a href="" >UAH</a></p>
+        <p class="college-item" id="Union-Mississippi-item"><a href="" >Union Mississippi</a></p>
+        <p class="college-item" id="West-Alabama-item"><a href="" >West Alabama</a></p>
+        <p class="college-item" id="West-Florida-item"><a href="" >West Florida</a></p>
+    </section>
+    <h3 class="CC-subheading" id="LoneStar-colleges">Lone Star</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Angelo-State-item"><a href="" >Angelo State</a></p>
+        <p class="college-item" id="Cameron-item"><a href="" >Cameron</a></p>
+        <p class="college-item" id="DBU-item"><a href="" >DBU</a></p>
+        <p class="college-item" id="Eastern-New-Mexico-item"><a href="" >Eastern New Mexico</a></p>
+        <p class="college-item" id="Lubbock-Christian-item"><a href="" >Lubbock Christian</a></p>
+        <p class="college-item" id="Midwestern-State-item"><a href="" >Midwestern State</a></p>
+        <p class="college-item" id="Oklahoma-Christian-item"><a href="" >Oklahoma Christian</a></p>
+        <p class="college-item" id="St-Edwards-item"><a href="" >St. Edward's</a></p>
+        <p class="college-item" id="St-Marys-item"><a href="" >St. Mary's</a></p>
+        <p class="college-item" id="Sul-Ross-State-item"><a href="" >Sul Ross State</a></p>
+        <p class="college-item" id="Texas-A&M-international-item"><a href="" >Texas A&M International</a></p>
+        <p class="college-item" id="Texas-A&M-Kingsville-item"><a href="" >Texas A&M Kingsville</a></p>
+        <p class="college-item" id="UT-Permian-Basin-item"><a href="" >UT Permian Basin</a></p>
+        <p class="college-item" id="UT-Tyler-item"><a href="" >UT Tyler</a></p>
+        <p class="college-item" id="West-Texas-A&M-item"><a href="" >West Texas A&M</a></p>
+        <p class="college-item" id="Western-New-Mexico-item"><a href="" >Western New Mexico</a></p>
+    </section>
+    <h3 class="CC-subheading" id="MEC-colleges">MEC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Charleston-WV-item"><a href="">Charleston (WV)</a></p>
+        <p class="college-item" id="Concord-item"><a href="">Concord</a></p>
+        <p class="college-item" id="Davis-Elkins-item"><a href="">Davis &amp; Elkins</a></p>
+        <p class="college-item" id="Fairmont-State-item"><a href="">Fairmont State</a></p>
+        <p class="college-item" id="Frostburg-State-item"><a href="">Frostburg State</a></p>
+        <p class="college-item" id="Glenville-State-item"><a href="">Glenville State</a></p>
+        <p class="college-item" id="Point-Park-item"><a href="">Point Park</a></p>
+        <p class="college-item" id="West-Liberty-item"><a href="">West Liberty</a></p>
+        <p class="college-item" id="West-Virginia-State-item"><a href="">West Virginia State</a></p>
+        <p class="college-item" id="West-Virginia-Wesleyan-item"><a href="">West Virginia Wesleyan</a></p>
+        <p class="college-item" id="Wheeling-item"><a href="">Wheeling</a></p>
+    </section>
+    <h3 class="CC-subheading" id="MIAA-colleges">MIAA</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Arkansas-Fort-Smith-item"><a href="">Arkansas-Fort Smith</a></p>
+        <p class="college-item" id="Central-Missouri-item"><a href="">Central Missouri</a></p>
+        <p class="college-item" id="Central-Oklahoma-item"><a href="">Central Oklahoma</a></p>
+        <p class="college-item" id="Emporia-State-item"><a href="">Emporia State</a></p>
+        <p class="college-item" id="Fort-Hays-State-item"><a href="">Fort Hays State</a></p>
+        <p class="college-item" id="Missouri-Southern-item"><a href="">Missouri Southern</a></p>
+        <p class="college-item" id="Missouri-Western-item"><a href="">Missouri Western</a></p>
+        <p class="college-item" id="Nebraska-Kearney-item"><a href="">Nebraska Kearney</a></p>
+        <p class="college-item" id="Newman-item"><a href="">Newman</a></p>
+        <p class="college-item" id="Northeastern-State-item"><a href="">Northeastern State</a></p>
+        <p class="college-item" id="Northwest-Missouri-item"><a href="">Northwest Missouri</a></p>
+        <p class="college-item" id="Pittsburg-State-item"><a href="">Pittsburg State</a></p>
+        <p class="college-item" id="Rogers-State-item"><a href="">Rogers State</a></p>
+        <p class="college-item" id="Washburn-item"><a href="">Washburn</a></p>
+    </section>
+    <h3 class="CC-subheading" id="Northeast10-colleges">Northeast-10</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Adelphi-item"><a href="">Adelphi</a></p>
+        <p class="college-item" id="American-International-item"><a href="">American International</a></p>
+        <p class="college-item" id="Assumption-item"><a href="">Assumption</a></p>
+        <p class="college-item" id="Bentley-item"><a href="">Bentley</a></p>
+        <p class="college-item" id="Franklin-Pierce-item"><a href="">Franklin Pierce</a></p>
+        <p class="college-item" id="New-Haven-item"><a href="">New Haven</a></p>
+        <p class="college-item" id="Pace-item"><a href="">Pace</a></p>
+        <p class="college-item" id="Saint-Anselm-item"><a href="">Saint Anselm</a></p>
+        <p class="college-item" id="Saint-Michaels-item"><a href="">Saint Michael's</a></p>
+        <p class="college-item" id="Southern-Connecticut-item"><a href="">Southern Connecticut</a></p>
+        <p class="college-item" id="Southern-New-Hampshire-item"><a href="">Southern New Hampshire</a></p>
+    </section>
+    <h3 class="CC-subheading" id="NSIC-colleges">NSIC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Augustana-item"><a href="">Augustana</a></p>
+        <p class="college-item" id="Bemidji-State-item"><a href="">Bemidji State</a></p>
+        <p class="college-item" id="Concordia-St-Paul-item"><a href="">Concordia-St. Paul</a></p>
+        <p class="college-item" id="Minnesota-Crookston-item"><a href="">Minnesota Crookston</a></p>
+        <p class="college-item" id="Minnesota-Duluth-item"><a href="">Minnesota Duluth</a></p>
+        <p class="college-item" id="Minnesota-State-Mankato-item"><a href="">Minnesota State Mankato</a></p>
+        <p class="college-item" id="Minnesota-State-Moorhead-item"><a href="">Minnesota State Moorhead</a></p>
+        <p class="college-item" id="Minot-State-item"><a href="">Minot State</a></p>
+        <p class="college-item" id="Northern-State-item"><a href="">Northern State</a></p>
+        <p class="college-item" id="Sioux-Falls-item"><a href="">Sioux Falls</a></p>
+        <p class="college-item" id="Southwest-Minnesota-State-item"><a href="">Southwest Minnesota State</a></p>
+        <p class="college-item" id="St-Cloud-State-item"><a href="">St. Cloud State</a></p>
+        <p class="college-item" id="UMary-item"><a href="">UMary (Mary)</a></p>
+        <p class="college-item" id="Upper-Iowa-item"><a href="">Upper Iowa</a></p>
+        <p class="college-item" id="Wayne-State-item"><a href="">Wayne State</a></p>
+        <p class="college-item" id="Winona-State-item"><a href="">Winona State</a></p>
+    </section>
+    <h3 class="CC-subheading" id="PacificWest-colleges">Pacific West</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Academy-of-Art-item"><a href="">Academy of Art</a></p>
+        <p class="college-item" id="Azusa-Pacific-item"><a href="">Azusa Pacific</a></p>
+        <p class="college-item" id="Biola-item"><a href="">Biola</a></p>
+        <p class="college-item" id="Chaminade-item"><a href="">Chaminade</a></p>
+        <p class="college-item" id="Concordia-Irvine-item"><a href="">Concordia Irvine</a></p>
+        <p class="college-item" id="Dominican-CA-item"><a href="">Dominican (CA)</a></p>
+        <p class="college-item" id="Fresno-Pacific-item"><a href="">Fresno Pacific</a></p>
+        <p class="college-item" id="Hawaii-Hilo-item"><a href="">Hawai'i Hilo</a></p>
+        <p class="college-item" id="Hawaii-Pacific-item"><a href="">Hawai'i Pacific</a></p>
+        <p class="college-item" id="Jessup-item"><a href="">Jessup</a></p>
+        <p class="college-item" id="Menlo-item"><a href="">Menlo</a></p>
+        <p class="college-item" id="Point-Loma-item"><a href="">Point Loma</a></p>
+        <p class="college-item" id="Vanguard-item"><a href="">Vanguard</a></p>
+        <p class="college-item" id="Westmont-item"><a href="">Westmont</a></p>
+    </section>
+    <h3 class="CC-subheading" id="PeachBelt-colleges">Peach Belt</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Augusta-item"><a href="">Augusta</a></p>
+        <p class="college-item" id="Clayton-State-item"><a href="">Clayton State</a></p>
+        <p class="college-item" id="Columbus-State-item"><a href="">Columbus State</a></p>
+        <p class="college-item" id="Flagler-item"><a href="">Flagler</a></p>
+        <p class="college-item" id="Georgia-College-State-University-item"><a href="">Georgia College &amp; State University</a></p>
+        <p class="college-item" id="Georgia-Southwestern-item"><a href="">Georgia Southwestern</a></p>
+        <p class="college-item" id="Lander-item"><a href="">Lander</a></p>
+        <p class="college-item" id="North-Georgia-item"><a href="">North Georgia</a></p>
+        <p class="college-item" id="USC-Aiken-item"><a href="">USC Aiken</a></p>
+        <p class="college-item" id="USC-Beaufort-item"><a href="">USC Beaufort</a></p>
+        <p class="college-item" id="Young-Harris-item"><a href="">Young Harris</a></p>
+    </section>
+    <h3 class="CC-subheading" id="PSAC-colleges">PSAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Bloomsburg-item"><a href="">Bloomsburg</a></p>
+        <p class="college-item" id="California-PA-item"><a href="">California (PA)</a></p>
+        <p class="college-item" id="Clarion-item"><a href="">Clarion</a></p>
+        <p class="college-item" id="East-Stroudsburg-item"><a href="">East Stroudsburg</a></p>
+        <p class="college-item" id="Edinboro-item"><a href="">Edinboro</a></p>
+        <p class="college-item" id="Gannon-item"><a href="">Gannon</a></p>
+        <p class="college-item" id="Indiana-PA-item"><a href="">Indiana (PA)</a></p>
+        <p class="college-item" id="Kutztown-item"><a href="">Kutztown</a></p>
+        <p class="college-item" id="Lock-Haven-item"><a href="">Lock Haven</a></p>
+        <p class="college-item" id="Mansfield-item"><a href="">Mansfield</a></p>
+        <p class="college-item" id="Mercyhurst-item"><a href="">Mercyhurst</a></p>
+        <p class="college-item" id="Millersville-item"><a href="">Millersville</a></p>
+        <p class="college-item" id="Pitt-Johnstown-item"><a href="">Pitt-Johnstown</a></p>
+        <p class="college-item" id="Seton-Hill-item"><a href="">Seton Hill</a></p>
+        <p class="college-item" id="Shippensburg-item"><a href="">Shippensburg</a></p>
+        <p class="college-item" id="Slippery-Rock-item"><a href="">Slippery Rock</a></p>
+        <p class="college-item" id="Shepherd-item"><a href="">Shepherd</a></p>
+        <p class="college-item" id="West-Chester-item"><a href="">West Chester</a></p>
+    </section>
+    <h3 class="CC-subheading" id="RMAC-colleges">RMAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Adams-State-item"><a href="">Adams State</a></p>
+        <p class="college-item" id="Black-Hills-State-item"><a href="">Black Hills State</a></p>
+        <p class="college-item" id="Chadron-State-item"><a href="">Chadron State</a></p>
+        <p class="college-item" id="Colorado-Christian-item"><a href="">Colorado Christian</a></p>
+        <p class="college-item" id="Colorado-Mesa-item"><a href="">Colorado Mesa</a></p>
+        <p class="college-item" id="Colorado-Mines-item"><a href="">Colorado Mines</a></p>
+        <p class="college-item" id="CSU-Pueblo-item"><a href="">CSU Pueblo</a></p>
+        <p class="college-item" id="Fort-Lewis-item"><a href="">Fort Lewis</a></p>
+        <p class="college-item" id="MSU-Denver-item"><a href="">MSU Denver</a></p>
+        <p class="college-item" id="New-Mexico-Highlands-item"><a href="">New Mexico Highlands</a></p>
+        <p class="college-item" id="Regis-item"><a href="">Regis</a></p>
+        <p class="college-item" id="South-Dakota-Mines-item"><a href="">South Dakota Mines</a></p>
+        <p class="college-item" id="UCCS-item"><a href="">UCCS</a></p>
+        <p class="college-item" id="Western-Colorado-item"><a href="">Western Colorado</a></p>
+        <p class="college-item" id="Westminster-item"><a href="">Westminster</a></p>
+    </section>
+    <h3 class="CC-subheading" id="SIAC-colleges">SIAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Albany-State-item"><a href="">Albany State</a></p>
+        <p class="college-item" id="Allen-item"><a href="">Allen</a></p>
+        <p class="college-item" id="Benedict-item"><a href="">Benedict</a></p>
+        <p class="college-item" id="Central-State-item"><a href="">Central State</a></p>
+        <p class="college-item" id="Clark-Atlanta-item"><a href="">Clark Atlanta</a></p>
+        <p class="college-item" id="Edward-Waters-item"><a href="">Edward Waters</a></p>
+        <p class="college-item" id="Fort-Valley-State-item"><a href="">Fort Valley State</a></p>
+        <p class="college-item" id="Kentucky-State-item"><a href="">Kentucky State</a></p>
+        <p class="college-item" id="Lane-item"><a href="">Lane</a></p>
+        <p class="college-item" id="LeMoyne-Owen-item"><a href="">LeMoyne-Owen</a></p>
+        <p class="college-item" id="Miles-item"><a href="">Miles</a></p>
+        <p class="college-item" id="Morehouse-item"><a href="">Morehouse</a></p>
+        <p class="college-item" id="Savannah-State-item"><a href="">Savannah State</a></p>
+        <p class="college-item" id="Spring-Hill-item"><a href="">Spring Hill</a></p>
+        <p class="college-item" id="Tuskegee-item"><a href="">Tuskegee</a></p>
+    </section>
+    <h3 class="CC-subheading" id="SouthAtlantic-colleges">South Atlantic</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Anderson-item"><a href="">Anderson</a></p>
+        <p class="college-item" id="Carson-Newman-item"><a href="">Carson-Newman</a></p>
+        <p class="college-item" id="Catawba-item"><a href="">Catawba</a></p>
+        <p class="college-item" id="Coker-item"><a href="">Coker</a></p>
+        <p class="college-item" id="Emory-Henry-item"><a href="">Emory &amp; Henry</a></p>
+        <p class="college-item" id="Lenoir-Rhyne-item"><a href="">Lenoir-Rhyne</a></p>
+        <p class="college-item" id="Lincoln-Memorial-item"><a href="">Lincoln Memorial</a></p>
+        <p class="college-item" id="Limestone-item"><a href="">Limestone</a></p>
+        <p class="college-item" id="Mars-Hill-item"><a href="">Mars Hill</a></p>
+        <p class="college-item" id="Newberry-item"><a href="">Newberry</a></p>
+        <p class="college-item" id="Tusculum-item"><a href="">Tusculum</a></p>
+        <p class="college-item" id="UVA-Wise-item"><a href="">UVA Wise</a></p>
+        <p class="college-item" id="Wingate-item"><a href="">Wingate</a></p>
+    </section>
+    <h3 class="CC-subheading" id="SunshineState-colleges">Sunshine State</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Barry-item"><a href="">Barry</a></p>
+        <p class="college-item" id="Eckerd-item"><a href="">Eckerd</a></p>
+        <p class="college-item" id="Embry-Riddle-item"><a href="">Embry-Riddle</a></p>
+        <p class="college-item" id="Florida-Southern-item"><a href="">Florida Southern</a></p>
+        <p class="college-item" id="Florida-Tech-item"><a href="">Florida Tech</a></p>
+        <p class="college-item" id="Lynn-item"><a href="">Lynn</a></p>
+        <p class="college-item" id="Nova-Southeastern-item"><a href="">Nova Southeastern</a></p>
+        <p class="college-item" id="Palm-Beach-Atlantic-item"><a href="">Palm Beach Atlantic</a></p>
+        <p class="college-item" id="Rollins-item"><a href="">Rollins</a></p>
+        <p class="college-item" id="Saint-Leo-item"><a href="">Saint Leo</a></p>
+        <p class="college-item" id="Tampa-item"><a href="">Tampa</a></p>
+    </section>
+</section>
+<section id="page4" class="toggle-page">
+    <h3 class="CC-subheading" id="AmericanRivers-colleges">American Rivers</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Buena-Vista-item"><a href="">Buena Vista</a></p>
+        <p class="college-item" id="Central-item"><a href="">Central</a></p>
+        <p class="college-item" id="Coe-item"><a href="">Coe</a></p>
+        <p class="college-item" id="Dubuque-item"><a href="">Dubuque</a></p>
+        <p class="college-item" id="Loras-item"><a href="">Loras</a></p>
+        <p class="college-item" id="Luther-item"><a href="">Luther</a></p>
+        <p class="college-item" id="Nebraska-Wesleyan-item"><a href="">Nebraska Wesleyan</a></p>
+        <p class="college-item" id="Simpson-item"><a href="">Simpson</a></p>
+        <p class="college-item" id="Wartburg-item"><a href="">Wartburg</a></p>
+    </section>
+    <h3 class="CC-subheading" id="AmericanSouthwest-colleges">American Southwest</h3>
+    <section class="list-colleges reveal">
+         <p class="college-item" id="Concordia-Texas-item"><a href="">Concordia Texas</a></p>
+        <p class="college-item" id="East-Texas-Baptist-item"><a href="">East Texas Baptist</a></p>
+        <p class="college-item" id="Hardin-Simmons-item"><a href="">Hardin-Simmons</a></p>
+        <p class="college-item" id="Howard-Payne-item"><a href="">Howard Payne</a></p>
+        <p class="college-item" id="LeTourneau-item"><a href="">LeTourneau</a></p>
+        <p class="college-item" id="Louisiana-College-item"><a href="">Louisiana College</a></p>
+        <p class="college-item" id="Mary-Hardin-Baylor-item"><a href="">Mary Hardin-Baylor</a></p>
+        <p class="college-item" id="McMurry-item"><a href="">McMurry</a></p>
+        <p class="college-item" id="Ozarks-item"><a href="">Ozarks</a></p>
+        <p class="college-item" id="Sul-Ross-State-item"><a href="">Sul Ross State</a></p>
+        <p class="college-item" id="Texas-Dallas-item"><a href="">Texas Dallas</a></p>
+        <p class="college-item" id="Texas-Lutheran-item"><a href="">Texas Lutheran</a></p>
+    </section>
+    <h3 class="CC-subheading" id="AMCC-colleges">AMCC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Alfred-State-item"><a href="">Alfred State</a></p>
+        <p class="college-item" id="Carlow-PA-item"><a href="">Carlow (PA)</a></p>
+        <p class="college-item" id="Hilbert-item"><a href="">Hilbert</a></p>
+        <p class="college-item" id="La-Roche-item"><a href="">La Roche</a></p>
+        <p class="college-item" id="Mount-Aloysius-item"><a href="">Mount Aloysius</a></p>
+        <p class="college-item" id="Medaille-item"><a href="">Medaille</a></p>
+        <p class="college-item" id="Penn-State-Altoona-item"><a href="">Penn State Altoona</a></p>
+        <p class="college-item" id="Penn-State-Behrend-item"><a href="">Penn State Behrend</a></p>
+        <p class="college-item" id="Pitt-Bradford-item"><a href="">Pitt-Bradford</a></p>
+        <p class="college-item" id="Pitt-Greensburg-item"><a href="">Pitt-Greensburg</a></p>
+    </section>
+    <h3 class="CC-subheading" id="AtlanticEast-colleges">Atlantic East</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Cabrini-item"><a href="">Cabrini</a></p>
+        <p class="college-item" id="Centenary-NJ-item"><a href="">Centenary (NJ)</a></p>
+        <p class="college-item" id="Gwynedd-Mercy-item"><a href="">Gwynedd Mercy</a></p>
+        <p class="college-item" id="Immaculata-item"><a href="">Immaculata</a></p>
+        <p class="college-item" id="Marymount-item"><a href="">Marymount</a></p>
+        <p class="college-item" id="Marywood-item"><a href="">Marywood</a></p>
+        <p class="college-item" id="Neumann-item"><a href="">Neumann</a></p>
+        <p class="college-item" id="Rosemont-item"><a href="">Rosemont</a></p>
+    </section>
+    <h3 class="CC-subheading" id="C2C-colleges">C2C</h3>
+    <section class="list-colleges reveal">
+        
+    </section>
+    <h3 class="CC-subheading" id="CCIW-colleges">CCIW</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="CCS-colleges">CCS</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Centennial-colleges">Centennial</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="CNE-colleges">CNE</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Commonwealth-colleges">Commonwealth</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="CUNYAC-colleges">CUNYAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Empire8-colleges">Empire 8</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Freedom-colleges">Freedom</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="GNAC-colleges">GNAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Heartland-colleges">Heartland</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Landmark-colleges">Landmark</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="LibertyLeague-colleges">Liberty League</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="LittleEast-colleges">Little East</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="MIAA-colleges">MIAA(Michigan)</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="MIAC-colleges">MIAC(Minnesota)</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Midwest-colleges">Midwest</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="MSCAC-colleges">MSCAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="NACC-colleges">NACC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="NESCAC-colleges">NESCAC</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Amherst-item"><a href="" >Amherst</a></p>
+        <p class="college-item" id="Bowdoin-item"><a href="" >Bowdoin</a></p>
+        <p class="college-item" id="Bates-item"><a href="" >Bates</a></p>
+        <p class="college-item" id="Colby-item"><a href="" >Colby</a></p>
+        <p class="college-item" id="Connecticut-College-item"><a href="" >Connecticut College</a></p>
+        <p class="college-item" id="Hamilton-item"><a href="" >Hamilton</a></p>
+        <p class="college-item" id="Middlebury-item"><a href="" >Middlebury</a></p>
+        <p class="college-item" id="Trinity-item"><a href="" >Trinity</a></p>
+        <p class="college-item" id="Tufts-item"><a href="" >Tufts</a></p>
+        <p class="college-item" id="Williams-item"><a href="" >Williams</a></p>
+    </section>
+    <h3 class="CC-subheading" id="NEWMAC-colleges">NEWMAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="NJAC-colleges">NJAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="NorthAtlantic-colleges">North Atlantic</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="NorthCoast-colleges">North Coast</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Northwest-colleges">Northwest</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="ODAC-colleges">ODAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="OhioAthletic-colleges">Ohio Athletic</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Presidents-colleges">Presidents</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="SAA-colleges">SAA</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="SCAC-colleges">SCAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="SCIAC-colleges">SCIAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="Skyline-colleges">Skyline</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="StLouis-colleges">St Louis</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="SUNYAC-colleges">SUNYAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="UAA-colleges">UAA</h3>
+    <section class="list-colleges reveal">
+        <p class="college-item" id="Brandeis-item"><a href="" >Brandeis</a></p>
+        <p class="college-item" id="Carnegie-Mellon-item"><a href="" >Carnegie Mellon</a></p>
+        <p class="college-item" id="Case-Western-Reserve-item"><a href="" >Case Western Reserve</a></p>
+        <p class="college-item" id="Emory-item"><a href="" >Emory</a></p>
+        <p class="college-item" id="NYU-item"><a href="" >NYU</a></p>
+        <p class="college-item" id="Rochester-item"><a href="" >Rochester</a></p>
+        <p class="college-item" id="Chicago-item"><a href="" >UChicago</a></p>
+        <p class="college-item" id="WashU-item"><a href="" >WashU</a></p>
+    </section>
+    <h3 class="CC-subheading" id="UnitedEast-colleges">United East</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="UpperMidwest-colleges">Upper Midwest</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="USASouth-colleges">USA South</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id="WIAC-colleges">WIAC</h3>
+    <section class="list-colleges reveal">
+    </section>
+    <h3 class="CC-subheading" id=""></h3>
+</section>
+<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</button>
+</main>
+    <div class="FD"></div>
+    <div class="grey-divider"></div>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo-text"><a href=index.html>RecruitMetrics</a></h2>
+      <p>Simplifying college basketball recruiting.</p>
+    </div>
+    <div class="header-footer-links">
+      <a href="#about">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+    <div class="footer-social">
+      <a href="amir.zachary.ibrahim@gmail.com" aria-label="Email">
+        <i class="fa fa-envelope" style="font-size:24px"></i>
+      </a>
+      <a href="" target="_blank" aria-label="LinkedIn">
+         <i class="fa fa-linkedin-square" style="font-size:22px"></i>
+      </a>
+        <a href="" target="_blank" aria-label="Instagram">
+             <i class="fa fa-instagram" style="font-size:24px"></i>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 RecruitMetrics. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script> 
+</body>     
+</html>
