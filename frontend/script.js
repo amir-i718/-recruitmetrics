@@ -451,7 +451,13 @@ const stateHSLeagueData = {
     },
     "NY": {
         leagues: ["NYSPHSAA", "PSAL", "CHSAA", "NEPSAC","AIS(Independent)"],
-        classifications: ["AAA", "AA", "A", "B", "C", "D"]
+        classifications: {
+            "NYSPHSAA": ["AAA", "AA", "A", "B", "C", "D"],
+            "PSAL": ["AAA", "AA", "A", "B", "C"],
+            "CHSAA": ["AAA", "AA", "A", "B", "C"],
+            "NEPSAC": ["AAA", "AA", "A", "B", "C"],
+            "AIS(Independent)": [, "AA", "A", "B"]
+        }
     },
     "NC": {
         leagues: ["NCHSAA","NCISAA","EYBL Scholastic"],
