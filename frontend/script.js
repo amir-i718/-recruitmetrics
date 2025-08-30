@@ -853,3 +853,72 @@ document.addEventListener('click', function(e) {
     }
   }
 });
+// Add this at the end of your existing script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const recruitForm = document.getElementById('RSform');
+    if (recruitForm) {
+        recruitForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the form from going to a new page
+            
+            // Show the loading state
+            const submitBtn = document.querySelector('.submit-button');
+            submitBtn.textContent = 'Calculating...';
+            submitBtn.disabled = true;
+            
+            // Get all the values from the form
+            const formData = new FormData(recruitForm);
+            
+            // Get height from feet and inches
+            const feet = formData.get('feet') || '6';
+            const inches = formData.get('inches') || '0';
+            const height = `${feet}'${inches}"`;
+            
+            // Prepare the data to send
+            const data = {
+                gpa: formData.get('GPA'),
+                height: height,
+                position: formData.get('position'),
+                skills: {
+                    shooting: parseInt(formData.get('shooting') || 50),
+                    passing: parseInt(formData.get('passing') || 50),
+                    defense: parseInt(formData.get('defense') || 50),
+                    athleticism: parseInt(formData.get('athleticism') || 50)
+                }
+            };
+            
+            // Show the data we're sending in the debug area
+            document.getElementById('debug').style.display = 'block';
+            document.getElementById('debug-output').textContent = JSON.stringify(data, null, 2);
+            
+            // Send the data to our calculator
+            fetch('/api/calculate-score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.error) {
+                    // Show error if something went wrong
+                    document.getElementById('debug-output').textContent += "\n\nERROR: " + result.error;
+                } else {
+                    // Save the results and go to the score page
+                    localStorage.setItem('recruitScore', result.score);
+                    localStorage.setItem('schoolMatches', JSON.stringify(result.matches));
+                    window.location.href = 'scorepage.html';
+                }
+            })
+            .catch(error => {
+                // Show error if something went wrong
+                document.getElementById('debug-output').textContent += "\n\nERROR: " + error;
+            })
+            .finally(() => {
+                // Reset the button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Calculate your chances';
+            });
+        });
+    }
+});
