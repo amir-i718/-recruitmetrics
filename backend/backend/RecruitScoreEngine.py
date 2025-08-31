@@ -55,7 +55,6 @@ class RecruitScoreEngine:
         return round(final_score, 1)
 
     def get_matching_schools(self, score):
-        """Find matching schools based on score"""
         matches = []
         
         for school in self.schools:

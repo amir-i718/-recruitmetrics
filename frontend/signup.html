@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - RecruitMetrics</title>
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header id="header">
+        <p class="logo-text"><a href="index.html">RecruitMetrics</a></p>
+        <nav class="nav">
+            <section class="LSnav">
+                <a class="header-link" href="#about">About</a>
+                <a class="header-link" href="Contact.html">Contact</a>
+            </section>
+            <a href="login.html" class="auth-btn login-btn">Login</a>
+        </nav>
+    </header>
+    <main class="auth-container">
+        <div class="auth-form-container">
+            <h2>Create an Account</h2>
+            <form id="signup-form" class="auth-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-message" id="signup-message"></div>
+                <button type="submit" class="auth-submit-btn button">Sign Up</button>
+            </form>
+            <div class="auth-alternate">
+                <p>Already have an account? <a href="login.html" class="logocolor">Login</a></p>
+            </div>
+        </div>
+    </main>
+    
+    <div class="FD"></div>
+    <div class="grey-divider"></div>
+    <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo-text"><a href=index.html>RecruitMetrics</a></h2>
+      <p>Simplifying college basketball recruiting.</p>
+    </div>
+    <div class="header-footer-links">
+      <a href="#about">About</a>
+      <a href="/Contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+    <div class="footer-social">
+      <a href="amir.zachary.ibrahim@gmail.com" aria-label="Email">
+        <i class="fa fa-envelope" style="font-size:24px"></i>
+      </a>
+      <a href="" target="_blank" aria-label="LinkedIn">
+         <i class="fa fa-linkedin-square" style="font-size:22px"></i>
+      </a>
+        <a href="" target="_blank" aria-label="Instagram">
+             <i class="fa fa-instagram" style="font-size:24px"></i>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 RecruitMetrics. All rights reserved.</p>
+  </div>
+</footer>
+    <script src="script.js"></script><script src="auth.js"></script>
+</body>
+</html>

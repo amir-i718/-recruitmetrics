@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSform</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header id="header">
@@ -20,10 +20,10 @@
         <nav class="nav">
   <section class="LSnav">
   <a class="header-link" href="#about">About</a>
-  <a class="header-link" href="contact.html">Contact</a>
+  <a class="header-link" href="Contact.html">Contact</a>
    </section>
-  <a href="login.html" class="auth-btn login-btn">Login</a>
-  <a href="signup.html" class="auth-btn signup-btn">Sign Up</a>
+  <div id="user-status" class="user-status">
+  </div>
 </nav>
     </header>
     <main>
@@ -256,7 +256,7 @@
     </div>
     <div class="header-footer-links">
       <a href="#about">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/Contact.html">Contact</a>
       <a href="/privacy.html">Privacy</a>
     </div>
     <div class="footer-social">
@@ -278,6 +278,6 @@
   <h3>Debug Information:</h3>
   <pre id="debug-output"></pre>
 </div>
-<script src="script.js"></script>
+<script src="script.js"></script><script src="auth.js"></script>
 </body>
 </html>

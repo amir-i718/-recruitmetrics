@@ -853,7 +853,7 @@ document.addEventListener('click', function(e) {
     }
   }
 });
-// Add this at the end of your existing script.js file
+// Add at the end of your script.js file
 document.addEventListener('DOMContentLoaded', function() {
     const recruitForm = document.getElementById('RSform');
     if (recruitForm) {
@@ -901,21 +901,28 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(result => {
                 if (result.error) {
-                    // Show error if something went wrong
-                    document.getElementById('debug-output').textContent += "\n\nERROR: " + result.error;
+                    // Show error in debug area
+                    document.getElementById('debug').style.display = 'block';
+                    document.getElementById('debug-output').textContent = 'Error: ' + result.error;
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Calculate your chances';
                 } else {
-                    // Save the results and go to the score page
+                    // Store results
                     localStorage.setItem('recruitScore', result.score);
                     localStorage.setItem('schoolMatches', JSON.stringify(result.matches));
+                    
+                    // Redirect to score page
                     window.location.href = 'scorepage.html';
                 }
             })
             .catch(error => {
-                // Show error if something went wrong
-                document.getElementById('debug-output').textContent += "\n\nERROR: " + error;
-            })
-            .finally(() => {
-                // Reset the button
+                console.error('Error:', error);
+                document.getElementById('debug').style.display = 'block';
+                document.getElementById('debug-output').textContent = 'Error: ' + error;
+                
+                // Reset button
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Calculate your chances';
             });
