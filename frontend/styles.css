@@ -668,7 +668,6 @@ input[type="range"].WP-slider::-ms-thumb {
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 /* Menu buttons */
 .toggle-menu button {
   flex: 1;
@@ -683,6 +682,9 @@ input[type="range"].WP-slider::-ms-thumb {
   transition: color 0.3s ease;
   cursor: pointer;
   border-radius: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Active button text color */
@@ -705,6 +707,40 @@ input[type="range"].WP-slider::-ms-thumb {
 }
 .toggle-page.active {
   display: block;
+}
+.toggle-menu button::before {
+  content: attr(data-full-text);
+}
+
+@media (max-width: 500px) {
+  .toggle-menu button::before {
+    content: attr(data-short-text);
+  }
+  
+  /* Hide the original text */
+  .toggle-menu button {
+    font-size: 0;
+  }
+}
+@media (max-width: 640px) {
+  .toggle-menu {
+    max-width: 95%;
+    padding: 2px;
+  }
+  
+  .toggle-menu button {
+    padding: 10px 4px;
+    font-size: 0.75rem;
+    min-width: 0;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .toggle-menu button {
+    font-size: 0.65rem;
+    padding: 10px 2px;
+  }
 }
 .list-conferences, .list-colleges {
   display: grid;
