@@ -886,7 +886,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
             
-            // Show the data we're sending in the debug area
             document.getElementById('debug').style.display = 'block';
             document.getElementById('debug-output').textContent = JSON.stringify(data, null, 2);
             

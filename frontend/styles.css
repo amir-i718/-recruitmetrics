@@ -38,6 +38,9 @@ body, html {
   text-decoration: none;
   margin-left: 10px 
 }
+.logo-text a {
+  text-decoration: none;
+}
 #header .cta-btn {
   color: #fff;
   border: none;
@@ -130,6 +133,9 @@ body {
   color: #4ba6e2; 
   font-family: 'Orbitron', sans-serif;
 } 
+  .logo-text a {
+    text-decoration: none;
+  }
 .logocolor {
   background: linear-gradient(135deg, #7BAFD4, #4F90C6);
   -webkit-background-clip: text;
@@ -840,11 +846,14 @@ input[type="range"].WP-slider::-ms-thumb {
   stroke: white;
 }
 .site-footer {
-background-color: black;
-  color: #fff;
-  padding: 3rem 2rem 2rem;
-  font-family: 'Inter', 'Helvetica Neue', sans-serif;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+width: 100vw;
+  min-width: 100vw;
+  left: 0;
+  right: 0;
+  position: relative;
+  background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-container {
