@@ -1,3 +1,5 @@
 {
-    "livePreview.defaultPreviewPath": "/frontend/Coachconnect.html"
+    "livePreview.defaultPreviewPath": "/frontend/Coachconnect.html",
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }

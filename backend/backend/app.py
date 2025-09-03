@@ -14,6 +14,9 @@ app = Flask(__name__, static_folder='../../frontend')
 app.secret_key = secrets.token_hex(16)  # Generate a random secret key
 CORS(app, supports_credentials=True)  # Enable CORS with credentials support
 
+# Create an instance of the score engine
+score_engine = RecruitScoreEngine()
+
 init_db()
 
 @app.route('/api/signup', methods=['POST'])
