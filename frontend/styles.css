@@ -134,7 +134,7 @@ body {
   font-family: 'Orbitron', sans-serif;
 } 
   .logo-text a {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 .logocolor {
   background: linear-gradient(135deg, #7BAFD4, #4F90C6);

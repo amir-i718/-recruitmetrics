@@ -72,8 +72,8 @@ def calculate_score():
     data = request.json
     logger.info(f"Received data: {data}")
     
-    # Add validation for required fields
-    required_fields = ['gpa', 'height']
+    # Add validation for required fields (using the API field names)
+    required_fields = ['State','gpa', 'height', 'position', 'AAU_Circuit', 'HS_league','HS-player-role','AAU-player-role','HS-WP','AAU-WP',]
     missing_fields = [field for field in required_fields if field not in data]
     
     if missing_fields:
@@ -82,16 +82,34 @@ def calculate_score():
         }), 400
     
     try:
-        calculator = RecruitScoreEngine()
-        
+        # Map the data to what RecruitScoreEngine expects
+        engine_data = {
+            'gpa': data.get('gpa'),
+            'height': data.get('height'),
+            'position': data.get('position'),
+            'AAU_Circuit': data.get('AAU_Circuit'),
+            'HS_league': data.get('HS_league'),
+            # Optional fields
+            'sat': data.get('SAT'),
+            'act': data.get('ACT')
+        }
+        logger.info(f"Sending to engine: {engine_data}")
         # Calculate score
-        score = calculator.calculate_recruit_score(data)
-
-        # Get matching schools
-        matches = calculator.get_matching_schools(score)
-
+        result = score_engine.calculate_recruit_score(engine_data)
+        logger.info(f"Calculated score: {result}")
+        
+        # Get matching schools - use both scores
+        matches = score_engine.get_matching_schools(
+            result['recruit_score'], 
+            result['academic_score']
+        )
+        
+        # Return full result including components
         return jsonify({
-            'score': score,
+            'recruit_score': result['recruit_score'],
+            'academic_score': result['academic_score'],
+            'competition_avg': result.get('competition_avg'),
+            'position_size_factor': result.get('position_size_factor'),
             'matches': matches
         })
     except Exception as e:
