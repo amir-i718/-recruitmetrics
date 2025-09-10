@@ -1230,3 +1230,100 @@ width: 100vw;
     gap: 1rem;
     color: #fff;
 }
+
+/* Loading Screen Styles */
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 165, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #FFA500;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-screen p {
+    font-size: 1.2rem;
+    color: #FFA500;
+    margin-top: 1rem;
+}
+
+/* Button Success State */
+.submit-button.success {
+    background-color: #4caf50 !important;
+    cursor: default;
+}
+
+/* Score Display Styles */
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.main-score {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.academic-score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+.score-label {
+    font-weight: normal;
+}
+
+.score-value-small {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Data source indicators */
+.data-source {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-align: center;
+    font-style: italic;
+}
+
+.data-source.real-data {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.data-source.storage-data {
+    background-color: rgba(33, 150, 243, 0.2);
+    color: #2196f3;
+    border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.data-source.test-data {
+    background-color: rgba(255, 152, 0, 0.2);
+    color: #ff9800;
+    border: 1px solid rgba(255, 152, 0, 0.3);
+}

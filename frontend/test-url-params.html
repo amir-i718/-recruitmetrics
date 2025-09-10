@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test URL Parameters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .note {
+            background: #fffde7;
+            padding: 10px;
+            border-left: 3px solid #ffd600;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Parameter Testing</h1>
+    
+    <p>This page demonstrates how URL parameters can pass data between pages without relying on localStorage or cookies.</p>
+    
+    <div class="note">
+        <strong>Note:</strong> If your calculator is working correctly, you shouldn't need this page. 
+        This is just for debugging the URL parameter approach.
+    </div>
+    
+    <h2>Test Links</h2>
+    
+    <p>Click these links to simulate different data sources:</p>
+    
+    <a href="scorepage.html?score=92&academic=8.5&matches=%5B%7B%22name%22%3A%22UCLA%22%2C%22match%22%3A95%7D%2C%7B%22name%22%3A%22Kentucky%22%2C%22match%22%3A90%7D%2C%7B%22name%22%3A%22Duke%22%2C%22match%22%3A85%7D%5D" class="btn">
+        Test with Good Score (92)
+    </a>
+    
+    <a href="scorepage.html?score=75&academic=6.8&matches=%5B%7B%22name%22%3A%22Michigan%20State%22%2C%22match%22%3A88%7D%2C%7B%22name%22%3A%22Villanova%22%2C%22match%22%3A82%7D%2C%7B%22name%22%3A%22Gonzaga%22%2C%22match%22%3A75%7D%5D" class="btn">
+        Test with Average Score (75)
+    </a>
+    
+    <a href="scorepage.html?score=55&academic=4.2&matches=%5B%7B%22name%22%3A%22Kansas%20University%22%2C%22match%22%3A72%7D%2C%7B%22name%22%3A%22North%20Carolina%22%2C%22match%22%3A65%7D%5D" class="btn">
+        Test with Low Score (55)
+    </a>
+    
+    <h2>What's Happening</h2>
+    
+    <p>When you click these links, the scorepage.js will:</p>
+    <ol>
+        <li>Parse the URL parameters (score, academic, matches)</li>
+        <li>Display the data without needing localStorage or cookies</li>
+        <li>Show a "real data" indicator even though this is test data</li>
+    </ol>
+    
+    <h2>Debugging</h2>
+    
+    <p>To clear all test data from localStorage, run this in your browser console:</p>
+    
+    <pre>localStorage.clear();
+console.log('All localStorage data cleared!');</pre>
+    
+    <div class="note">
+        <strong>Important:</strong> For your real application flow, the form submission should generate the URL parameters 
+        automatically, as configured in your updated RSform.js file.
+    </div>
+    
+    <a href="RSform.html" class="btn">Back to Form</a>
+</body>
+</html>

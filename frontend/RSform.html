@@ -34,18 +34,18 @@
         <form class="RSform" id="RSform">
   <!-- Step 1 -->
   <div class="form-step">
-    <label for="player-height" class="RSform-Qtext">Player height</label>
+    <label for="player_height" class="RSform-Qtext">Player height</label>
     <div class="height-inputs">
-        <input type="number" id="player-height-feet" name="player-height-feet" placeholder="Ft" min="5" max="7" oninput="validateHeight(this)" required>
-        <input type="number" id="player-height-inches" name="player-height-inches" placeholder="Inches" min="0" max="11" oninput="validateHeight(this)" required>
+        <input type="number" id="player_height-feet" name="player_height-feet" placeholder="Ft" min="5" max="7" oninput="validateHeight(this)" required>
+        <input type="number" id="player_height-inches" name="player_height-inches" placeholder="Inches" min="0" max="11" oninput="validateHeight(this)" required>
     </div>
     <button type="button" class="next-btn" disabled>Next</button>
     <p class="microcopy">Takes less than two minutes</p>
 </div>
   <div class="small-divider"></div>
 <div class="form-step">
-    <label for="player-position" class="RSform-Qtext">Player position</label>
-    <select id="player-position" name="player-position" required>
+    <label for="player_position" class="RSform-Qtext">Player position</label>
+    <select id="player_position" name="player_position" required>
       <option value="">Select a position</option>
       <option value="Guard">Guard</option>
       <option value="Wing">Wing</option>
@@ -142,8 +142,8 @@
 
   <!-- Step 6 -->
   <div class="form-step">
-    <label for="HS-player-role" class="RSform-Qtext">HS player role</label>
-    <select id="HS-player-role" name="HS-player-role" required>
+    <label for="HS_player_role" class="RSform-Qtext">HS player role</label>
+    <select id="HS_player_role" name="HS_player_role" required>
       <option value="">Select a role</option>
       <option value="first-option">First option</option>
       <option value="primary-starter">2nd/3rd option</option>
@@ -158,10 +158,10 @@
 
   <!-- Step 7 -->
   <div class="form-step">
-    <label for="HS-WP" class="RSform-Qtext">HS Win percentage</label>
-    <input class="WP-slider" type="range" id="HS-WP" name="HS-WP" min="0" max="100" value="50"
-      oninput="document.getElementById('HS-WP-value').textContent = this.value + '%'">
-    <span id="HS-WP-value" class="WP-value">50%</span>
+    <label for="HS_WP" class="RSform-Qtext">HS Win percentage</label>
+    <input class="WP-slider" type="range" id="HS_WP" name="HS_WP" min="0" max="100" value="50"
+      oninput="document.getElementById('HS_WP-value').textContent = this.value + '%'">
+    <span id="HS_WP-value" class="WP-value">50%</span>
     <button type="button" class="back-btn ">Back</button>
     <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
   </div>
@@ -221,10 +221,10 @@
 
   <!-- Step 10 -->
   <div class="form-step">
-    <label for="AAU-WP" class="RSform-Qtext"> AAU Win percentage</label>
-    <input class="WP-slider" type="range" id="AAU-WP" name="AAU-WP" min="0" max="100" value="50"
-      oninput="document.getElementById('AAU-WP-value').textContent = this.value + '%'">
-    <span id="AAU-WP-value" class="WP-value">50%</span>
+    <label for="AAU_WP" class="RSform-Qtext"> AAU Win percentage</label>
+    <input class="WP-slider" type="range" id="AAU_WP" name="AAU_WP" min="0" max="100" value="50"
+      oninput="document.getElementById('AAU_WP-value').textContent = this.value + '%'">
+    <span id="AAU_WP-value" class="WP-value">50%</span>
     <button type="button" class="back-btn ">Back</button>
     <button type="button" class="next-btn" disabled>Next</button>             <p class="microcopy">Takes less than two minutes</p>
   </div>

@@ -123,8 +123,8 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById(valueId).textContent = this.value + '%';
         });
     });
-    const feetInput = document.getElementById('player-height-feet');
-    const inchesInput = document.getElementById('player-height-inches');
+    const feetInput = document.getElementById('player_height-feet');
+    const inchesInput = document.getElementById('player_height-inches');
 
     if (feetInput && inchesInput) {
         feetInput.addEventListener('input', () => validateHeight(feetInput));
@@ -212,8 +212,8 @@ function validateHeight(input) {
     
     input.value = value;
 
-    const feetInput = document.getElementById('player-height-feet');
-    const inchesInput = document.getElementById('player-height-inches');
+    const feetInput = document.getElementById('player_height-feet');
+    const inchesInput = document.getElementById('player_height-inches');
     const nextBtn = input.closest('.form-step').querySelector('.next-btn');
 
     const feetValid = feetInput.value && parseInt(feetInput.value) >= 5 && parseInt(feetInput.value) <= 7;

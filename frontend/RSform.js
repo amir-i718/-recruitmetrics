@@ -5,9 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         recruitScoreForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Get form data
-            const feet = parseInt(document.getElementById('player-height-feet').value) || 0;
-            const inches = parseInt(document.getElementById('player-height-inches').value) || 0;
+            const feet = parseInt(document.getElementById('player_height-feet').value) || 0;
+            const inches = parseInt(document.getElementById('player_height-inches').value) || 0;
             
             const height = `${feet}'${inches}"`;
             
@@ -16,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Core fields expected by your engine
                 gpa: parseFloat(document.getElementById('GPA').value) || 0,
                 height: height,
-                position: document.getElementById('player-position').value,
-                
+                position: document.getElementById('player_position').value,
                 // Map to the exact field names expected by backend
                 AAU_Circuit: document.getElementById('AAU_Circuit').value,  // Changed from aau_circuit
                 HS_league: document.getElementById('HS_league').value,     // Changed from hs_league
@@ -29,22 +27,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Extra fields that might be useful for future features
                 state: document.getElementById('state').value,
                 classification: document.getElementById('Classification').value,
-                hs_role: document.getElementById('HS-player-role').value,
-                hs_win_percentage: parseInt(document.getElementById('HS-WP').value) || 0,
-                aau_role: document.getElementById('AAU-team-role').value,
-                aau_win_percentage: parseInt(document.getElementById('AAU-WP').value) || 0
+                hs_role: document.getElementById('HS_player_role').value,
+                hs_win_percentage: parseInt(document.getElementById('HS_WP').value) || 0,
+                aau_role: document.getElementById('AAU_player_role').value,
+                aau_win_percentage: parseInt(document.getElementById('AAU_WP').value) || 0
             };
             
             // Show loading state
             const submitButton = document.querySelector('.submit-button');
-            submitButton.classList.add('loading');
-            submitButton.textContent = 'Calculating...';
-            
-            // For debugging - remove in production
-            console.log('Sending form data:', formData);
+            if (submitButton) {
+                submitButton.classList.add('loading');
+                submitButton.textContent = 'Calculating...';
+            }
             
             // Send data to backend
-            fetch('/api/calculate-score', {
+            fetch('http://localhost:8080/api/calculate-score', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -60,19 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                console.log('Received data:', data); // Debug
+                console.log('Results received:', data);
                 
-                // Check if we have the expected data structure
-                if (!data.recruit_score) {
-                    throw new Error('Invalid response format');
-                }
-                
-                // Save results to localStorage (adjusted for new response format)
-                localStorage.setItem('recruitScore', data.recruit_score);
-                localStorage.setItem('academicScore', data.academic_score);
-                localStorage.setItem('schoolMatches', JSON.stringify(data.matches || []));
-                
-                // Redirect to score page
+                // Simple redirect to score page
                 window.location.href = 'scorepage.html';
             })
             .catch(error => {
@@ -81,8 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .finally(() => {
                 // Reset button state
-                submitButton.classList.remove('loading');
-                submitButton.textContent = 'Calculate Score';
+                if (submitButton) {
+                    submitButton.classList.remove('loading');
+                    submitButton.textContent = 'Calculate Score';
+                }
             });
         });
     }
