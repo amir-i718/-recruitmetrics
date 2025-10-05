@@ -237,10 +237,10 @@ const stateHSLeagueData = {
         }
     },
     "AZ": {
-        leagues: ["AIA","ACSAA","EYBL Scholastic"],
+        leagues: ["AIA","AIA(Private)","EYBL Scholastic"],
         classifications: {
-            "AIA":["6A", "5A", "4A", "3A", "2A", "1A", "No Classification"],
-            "ACSAA":["SKIP THIS STEP"],
+            "AIA":["6A", "5A", "4A", "3A", "2A", "1A"],
+            "AIA(Private)":["SKIP THIS STEP"],
             "EYBL Scholastic":["SKIP THIS STEP"]
         }
     },
@@ -259,7 +259,7 @@ const stateHSLeagueData = {
     "CO": {
         leagues: ["CHSAA","CCSAA"],
         classifications: {
-            "CHSAA": ["5A", "4A", "3A", "2A", "1A", "No Classification"],
+            "CHSAA": ["6A","5A", "4A", "3A", "2A", "1A", "No Classification"],
             "CCSAA": ["SKIP THIS STEP"]
         }
     },
@@ -271,23 +271,26 @@ const stateHSLeagueData = {
         }
     },
     "DE": {
-        leagues: [],
-        classifications: []
+        leagues: ["DIAA","Independent"],
+        classifications: {
+            "DIAA": ["Division I","Division II"],
+            "Independent": ["SKIP THIS STEP"]
+        }
     },
     "DC": {
-        leagues: ["DCIAA","WCAC","ISL"],
+        leagues: ["DCSAA","WCAC","ISL"],
         classifications: {
-            "DCIAA": ["SKIP THIS STEP"],
+            "DCSAA": ["SKIP THIS STEP"],
             "WCAC": ["SKIP THIS STEP"],
             "ISL": ["SKIP THIS STEP"]
         }
     },
     "GA": {
-        leagues: ["GHSAA","GISA","GAPPS"],
+        leagues: ["GHSAA","GISA","OTE"],
         classifications: {
             "GHSAA": ["7A", "6A", "5A", "4A", "3A", "2A", "1A"],
             "GISA": ["SKIP THIS STEP"],
-            "GAPPS": ["SKIP THIS STEP"]
+            "OTE": ["SKIP THIS STEP"]
         }
     },
     "FL": {
@@ -314,7 +317,7 @@ const stateHSLeagueData = {
         leagues: ["IHSA","CCL","ESCC","ISL(independent)"],
         classifications: {
             "IHSA": ["Class 1A", "Class 2A", "Class 3A", "Class 4A"],
-            "CCL": ["SKIP THIS STEP"],
+            "CCL": ["Blue", "Other"],
             "ESCC": ["SKIP THIS STEP"],
             "ISL(independent)": ["SKIP THIS STEP"]
         }
@@ -345,17 +348,23 @@ const stateHSLeagueData = {
     "KY": {
         leagues: ["KHSAA","Independent"],
         classifications: {
-            "KHSAA": ["6A", "5A", "4A", "3A", "2A", "1A"],
+            "KHSAA": ["Louisville","Rest of State"],
             "Independent": ["SKIP THIS STEP"]
         }
     },
     "LA": {
         leagues: ["LHSAA(non-public)","LHSAA(public)"],
-        classifications: ["Division 1","Division 2","Division 3","Division 4"]
+        classifications: {
+            "LHSAA(non-public)": ["Division 1","Division 2","Division 3","Division 4"],
+            "LHSAA(public)": ["Division 1","Division 2","Division 3","Division 4"]
+        }
     },
     "ME": {
         leagues: ["MPA","NEPSAC"],
-        classifications: ["AAA","AA","A","B","C","D"]
+        classifications: {
+            "MPA": ["AA","A","B","C","D"],
+            "NEPSAC": ["AAA","AA","A","B","C"]
+        }
     },
     "MD": {
         leagues: ["MPSSAA", "WCAC", "MIAA","Independent"],
@@ -377,7 +386,7 @@ const stateHSLeagueData = {
     "MI": {
         leagues: ["MHSAA","CHSL","EYBL Scholastic","Independent(National)","Independent"],
         classifications: {
-            "MHSAA": ["A","B","C","D"],
+            "MHSAA": ["Division 1", "Division 2", "Division 3", "Division 4"],
             "CHSL": ["SKIP THIS STEP"],
             "EYBL Scholastic": ["SKIP THIS STEP"],
             "Independent(National)": ["SKIP THIS STEP"],
@@ -393,10 +402,10 @@ const stateHSLeagueData = {
         }
     },
     "MS": {
-        leagues: ["MHSAA","Other"],
+        leagues: ["MHSAA","MAIS"],
         classifications: {
             "MHSAA": ["6A", "5A", "4A", "3A", "2A", "1A", "No Classification"],
-            "Other": ["SKIP THIS STEP"]
+            "MAIS": ["SKIP THIS STEP"]
         }
     },
     "MO": {
@@ -413,23 +422,22 @@ const stateHSLeagueData = {
         classifications: ["AA", "A","B","C"]
     },
     "NE": {
-        leagues: ["NSAA","Centennial Conference"],
+        leagues: ["NSAA",],
         classifications: {
             "NSAA": ["A","B","C1","C2","D1","D2"],
-            "Centennial Conference": ["SKIP THIS STEP"]
         }
     },
     "NV": {
         leagues: ["NIAA","Other"],
         classifications: {
-            "NIAA": ["4A", "3A", "2A", "1A", "No Classification"],
+            "NIAA": ["5A","4A", "3A", "2A", "1A", "No Classification"],
             "Other": ["SKIP THIS STEP"]
         }
     },
     "NH": {
         leagues: ["NHIAA", "NEPSAC","EYBL Scholastic"],
         classifications: {
-            "NHIAA": ["Division 1","Division 2","Division 3","Division 4"],
+            "NHIAA": ["Division I","Division II","Division III","Division IV"],
             "NEPSAC": ["AAA","AA","A","B","C",],
             "EYBL Scholastic": ["SKIP THIS STEP"]
         }
@@ -450,13 +458,14 @@ const stateHSLeagueData = {
         }
     },
     "NY": {
-        leagues: ["NYSPHSAA", "PSAL", "CHSAA", "NEPSAC","AIS(Independent)"],
+        leagues: ["NYSPHSAA", "PSAL", "CHSAA", "NEPSAC","AIS(Independent)","EYBL scholastic", "OTE"],
         classifications: {
             "NYSPHSAA": ["AAA", "AA", "A", "B", "C", "D"],
             "PSAL": ["AAA", "AA", "A", "B", "C"],
             "CHSAA": ["AAA", "AA", "A", "B", "C"],
             "NEPSAC": ["AAA", "AA", "A", "B", "C"],
-            "AIS(Independent)": [, "AA", "A", "B"]
+            "AIS(Independent)": ["AAA", "AA", "A", "B"],
+            "OTE": ["SKIP THIS STEP"]
         }
     },
     "NC": {
@@ -468,9 +477,10 @@ const stateHSLeagueData = {
         }
     },
     "ND": {
-        leagues: ["NDHSAA"],
+        leagues: ["NDHSAA","NDCSL"],
         classifications: {
-            "NDHSAA": ["Class A", "Class B"]
+            "NDHSAA": ["Class A", "Class B"],
+            "NDCSL": ["SKIP THIS STEP"]
         }
     },
     "OH": {
@@ -510,21 +520,23 @@ const stateHSLeagueData = {
         }
     },
     "SC": {
-        leagues: [],
-        classifications: ["5A", "4A", "3A", "2A", "1A", "No Classification"]
+        leagues: ["SCHSL","SCISA"],
+        classifications: {
+            "SCHSL": ["5A", "4A", "3A", "2A", "1A"],
+            "SCISA": ["SKIP THIS STEP"]
+        }
     },
     "SD": {
-        leagues: ["SDHSAA","SDCSC"],
+        leagues: ["SDHSAA"],
         classifications: {
-            "SDHSAA": ["Class AA","Class A", "Class B"],
-            "SDCSC": ["SKIP THIS STEP"]
+            "SDHSAA": ["AA","A", "B"],
         }
     },
     "TN": {
         leagues: ["TISAA","DII"],
         classifications: {
             "TISAA": ["4A", "3A", "2A", "1A", "No Classification"],
-            "DII": ["AA", "A"]
+            "DII": ["AAA","AA", "A"]
         }
     },
     "TX": {
@@ -569,7 +581,7 @@ const stateHSLeagueData = {
     "WV": {
         leagues: ["WVSSAC","Independent"],
         classifications: {
-            "WVSSAC": ["Class AAA", "Class AA", "Class A"],
+            "WVSSAC": ["AAAA","AAA", "AA", "A"],
             "Independent": ["SKIP THIS STEP"]
         }
     },

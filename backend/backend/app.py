@@ -63,37 +63,6 @@ def save_score():
     data = request.json
     User.save_score(session['user_id'], data)
     return jsonify({'success': True}), 201
-
-@app.route('/api/calculate-score', methods=['POST'])
-def calculate_score():
-    data = request.json
-    logger.info(f"Received data: {data}")
-    
-    # Add validation for required fields
-    required_fields = ['gpa', 'height']
-    missing_fields = [field for field in required_fields if field not in data]
-    
-    if missing_fields:
-        return jsonify({
-            'error': f"Missing required fields: {', '.join(missing_fields)}"
-        }), 400
-    
-    try:
-        calculator = RecruitScoreEngine()
-        
-        # Calculate score
-        score = calculator.calculate_recruit_score(data)
-
-        # Get matching schools
-        matches = calculator.get_matching_schools(score)
-
-        return jsonify({
-            'score': score,
-            'matches': matches
-        })
-    except Exception as e:
-        logger.error(f"Error calculating score: {str(e)}")
-        return jsonify({'error': str(e)}), 400
 # Serve frontend files
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
