@@ -865,7 +865,6 @@ document.addEventListener('click', function(e) {
     }
   }
 });
-// Add at the end of your script.js file
 document.addEventListener('DOMContentLoaded', function() {
     const recruitForm = document.getElementById('RSform');
     if (recruitForm) {

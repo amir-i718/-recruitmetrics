@@ -115,7 +115,7 @@ body, html {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  box-shadow: 0 2px 8px rgba(75,90,166,226,0.15);
+  box-shadow: 0 2px 8px rgba(75,166,226,0.15);
 }
 body {
     font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -658,7 +658,7 @@ input[type="range"].WP-slider::-ms-thumb {
 
 /* Highlight effect for found schools */
 .college-item.highlight {
-  background: rgba(123, 175,90, 212, 0.2);
+  background: rgba(123, 175, 212, 0.2);
   border-radius: 8px;
   transition: background 0.5s;
 }
@@ -931,7 +931,7 @@ width: 100vw;
     position: relative;
     width: 90%!important;
     min-height: 400px;
-    max-width: 800px;
+    max-width: 480px;
     margin: 0 auto;
     padding: 2rem;
     background: transparent;
@@ -1040,6 +1040,7 @@ width: 100vw;
 }
 .form-nav {
   margin-top: 1rem;
+  justify-content: center;
 }
 
 .form-nav button,
