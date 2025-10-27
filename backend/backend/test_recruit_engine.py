@@ -65,19 +65,17 @@ def test_recruit_score_calculation():
     
     # Example recruit data
     recruit = {
-        'height': 69,  # 5'9"
-        'position': 'Guard',
-        'state': 'NY',
-        'hs_league': 'NYSPHAA',
-        'classification': 'AA',
-        'hs_role': 'Role Player',
-        'hs_wpr': 30,
-        'aau_circuit': 'Other',
+        'height': 80,  # 6'8"
+        'position': 'Forward',
+        'state': 'CT',
+        'hs_league': 'NEPSAC',
+        'classification': 'A',
+        'hs_role': 'Contributor',
+        'hs_wpr': 60,
+        'aau_circuit': 'HGSL',
         'aau_role': 'Contributor',
-        'aau_wpr': 40,
-        'gpa': 3.4,
-        'sat': None,
-        'act': None
+        'aau_wpr': 60,
+        'gpa': 4.0
     }
     
     size_index = engine.SizeIndex_calculator(recruit['height'], recruit['position'])
