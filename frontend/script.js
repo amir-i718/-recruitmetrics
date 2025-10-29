@@ -185,16 +185,6 @@ const totalSteps = document.querySelectorAll('.form-step').length;
             }
         });
     });
-    const recruitForm = document.getElementById('RSform');
-if (recruitForm) {
-    recruitForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-        
-        // Here you would normally process the form data
-        // For now, we'll just redirect to the score page
-        window.location.href = 'scorepage.html';
-    });
-}
 });
 function validateHeight(input) {
     if (!input.value || isNaN(input.value)) {
@@ -245,8 +235,10 @@ const stateHSLeagueData = {
         }
     },
     "AR": {
-        leagues: [],
-        classifications: ["6A", "5A", "4A", "3A", "2A", "1A","No Classification"]
+        leagues: ["AAA"],
+        classifications: {
+            "AAA": ["6A", "5A", "4A", "3A", "2A", "1A","No Classification"]
+        }
     },
     "CA": {
         leagues: ["CIF","EYBL Scholastic","Independent"],
@@ -864,78 +856,4 @@ document.addEventListener('click', function(e) {
       suggestions.style.display = 'none';
     }
   }
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const recruitForm = document.getElementById('RSform');
-    if (recruitForm) {
-        recruitForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop the form from going to a new page
-            
-            // Show the loading state
-            const submitBtn = document.querySelector('.submit-button');
-            submitBtn.textContent = 'Calculating...';
-            submitBtn.disabled = true;
-            
-            // Get all the values from the form
-            const formData = new FormData(recruitForm);
-            
-            // Get height from feet and inches
-            const feet = formData.get('feet') || '6';
-            const inches = formData.get('inches') || '0';
-            const height = `${feet}'${inches}"`;
-            
-            // Prepare the data to send
-            const data = {
-                gpa: formData.get('GPA'),
-                height: height,
-                position: formData.get('position'),
-                skills: {
-                    shooting: parseInt(formData.get('shooting') || 50),
-                    passing: parseInt(formData.get('passing') || 50),
-                    defense: parseInt(formData.get('defense') || 50),
-                    athleticism: parseInt(formData.get('athleticism') || 50)
-                }
-            };
-            
-            document.getElementById('debug').style.display = 'block';
-            document.getElementById('debug-output').textContent = JSON.stringify(data, null, 2);
-            
-            // Send the data to our calculator
-            fetch('/api/calculate-score', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (result.error) {
-                    // Show error in debug area
-                    document.getElementById('debug').style.display = 'block';
-                    document.getElementById('debug-output').textContent = 'Error: ' + result.error;
-                    
-                    // Reset button
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Calculate your chances';
-                } else {
-                    // Store results
-                    localStorage.setItem('recruitScore', result.score);
-                    localStorage.setItem('schoolMatches', JSON.stringify(result.matches));
-                    
-                    // Redirect to score page
-                    window.location.href = 'scorepage.html';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('debug').style.display = 'block';
-                document.getElementById('debug-output').textContent = 'Error: ' + error;
-                
-                // Reset button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Calculate your chances';
-            });
-        });
-    }
 });
