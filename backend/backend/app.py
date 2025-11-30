@@ -6,7 +6,7 @@ import secrets
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, validator
 from fastapi.middleware.cors import CORSMiddleware
-from typing import Optional, Literal
+from typing import List, Optional, Literal
 from Authdb import init_db, User
 from RecruitScoreEngine import RecruitScoreEngine
 engine = RecruitScoreEngine()
@@ -114,6 +114,27 @@ class MatchesOut(BaseModel):
     academic_score_1_to_10: int
     matches: list
 
+class SchoolResponse(BaseModel):
+    id: int
+    name: str
+    division: Optional[str] = None
+    conference: Optional[str] = None
+    athletic_threshold: Optional[int] = None
+    athletic_maximum: Optional[int] = None
+    academic_threshold: Optional[int] = None
+    state: Optional[str] = None
+    city: Optional[str] = None
+    gpa_min: Optional[float] = None
+    gpa_max: Optional[float] = None
+    sat_min: Optional[int] = None
+    sat_max: Optional[int] = None
+    interest_clusters: Optional[List[str]] = None
+    size: Optional[str] = None
+    region: Optional[str] = None
+    primary_color: Optional[str] = None
+    secondary_color: Optional[str] = None
+    notes: Optional[str] = None
+
 @score_app.get("/health")
 def health():
     return {"status": "ok"}
@@ -189,6 +210,55 @@ def matches(payload: ScoreIn):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
     
+@score_app.get("/schools/{school_id}", response_model=SchoolResponse)
+async def get_school(school_id: int):
+    """Get detailed school information by ID"""
+    try:
+        import sqlite3
+        import os
+        
+        # Connect to your basketball database
+        conn = sqlite3.connect('basketball_data.db')
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            SELECT 
+                id, name,
+                athletic_threshold, athletic_maximum, academic_threshold,
+                division, conference,
+                state, city, gpa_min, gpa_max, 
+                sat_min, sat_max,
+                interest_clusters, size, region,
+                primary_color, secondary_color, notes
+            FROM schools 
+            WHERE id = ?
+        ''', (school_id,))
+        
+        row = cursor.fetchone()
+        conn.close()
+        
+        if not row:
+            raise HTTPException(status_code=404, detail="School not found")
+            
+        school_data = dict(row)
+        
+        # Parse interest_clusters JSON if present
+        if school_data.get('interest_clusters'):
+            try:
+                import json
+                school_data['interest_clusters'] = json.loads(school_data['interest_clusters'])
+            except:
+                school_data['interest_clusters'] = []
+        
+        return SchoolResponse(**school_data)
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error fetching school {school_id}: {str(e)}")
+        raise HTTPException(status_code=500, detail="Server error")
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):

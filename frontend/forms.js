@@ -1,39 +1,6 @@
 console.log('🚀 forms.js is executing!');
 console.log('📍 Current page:', window.location.href);
 console.log('⏰ Load time:', new Date().toISOString());
-function generateRecruitMessage(score) {
-    const scoreNum = parseInt(score);
-    
-    if (scoreNum >= 85) {
-        return {
-            text: `You are a blue blood level player! With a score of ${score}, you're among the elite prospects. Blue blood level programs are likely to pursue you`,
-        };
-    } else if (scoreNum >= 75) {
-        return {
-            text: `You are a high major prospect! Your score of ${score} puts you in the high D1 recruiting range. You should receive significant interest top programs.`,
-        };
-    } else if (scoreNum >= 70) {
-        return {
-            text: `You are a mid-high major level recruit. With a score of ${score}, you're trending towards mid-high major interest.`,
-        };
-    } else if (scoreNum >= 60) {
-        return {
-            text: `Your score of ${score} indicates you are a solid D1 level recruit. Mid-low major programs will likely show interest.`,
-        };
-    } else if (scoreNum >= 53) {
-        return {
-            text: `Your score of ${score} suggests that you're suited for the top level of divisions 2 or 3. You're trending towards being a D1 player.`,
-        };
-    } else if (scoreNum >= 45) {
-        return {
-            text: `Scholarship time! With a score of ${score}, you are around a D2 level player. Keep working on your development.`,
-        };
-    } else {
-        return {
-            text: `Your score of ${score} shows that you are a solid D3 level player. Keep grinding!`,
-        };
-    }
-}
 document.addEventListener('DOMContentLoaded', function() {
     // Get stored results
     const score = localStorage.getItem('recruitScore');

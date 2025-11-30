@@ -5,10 +5,9 @@ import random
 
 class RecruitScoreEngine:
     def __init__(self):
-        # List of colleges for matching with athletic and academic thresholds
         self.schools = self.load_schools_from_db()
         
-        # Position average heights (in inches)
+
         self.height_standards = {
             "Guard": 74,    # 6'2"
             "Wing": 77,     # 6'5"
