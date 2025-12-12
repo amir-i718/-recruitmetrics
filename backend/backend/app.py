@@ -258,7 +258,6 @@ async def get_school(school_id: int):
     except Exception as e:
         logger.error(f"Error fetching school {school_id}: {str(e)}")
         raise HTTPException(status_code=500, detail="Server error")
-
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):

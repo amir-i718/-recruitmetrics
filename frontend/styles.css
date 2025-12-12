@@ -1231,3 +1231,191 @@ width: 100vw;
     gap: 1rem;
     color: #fff;
 }
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.modal-open {
+    opacity: 1;
+}
+
+.modal-container {
+    background: #1a1a1a;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-open .modal-container {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    background: #1a1a1a;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: #666;
+    line-height: 1;
+    margin-left: 1rem;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content {
+    padding: 0;
+    overflow-y: auto;
+    max-height: calc(85vh - 100px);
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.error {
+    color: #dc3545;
+}
+
+.school-info {
+    padding: 1.5rem;
+}
+
+.school-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.school-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.75rem;
+    background: linear-gradient(135deg, #7BAFD4, #4F90C6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #7BAFD4; /* Fallback color for browsers that don't support gradient text */
+    text-shadow: none;
+
+}
+.school-details-line {
+    font-size: 1rem;
+    color: #666; 
+    margin-top: 0.5rem;
+    text-align: center;
+}
+.info-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-section h4 {
+    margin: 0 0 0.75rem 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: #1a1a1a;
+    border-radius: 6px;
+}
+
+.info-item .label {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.info-item .value {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.clusters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cluster-tag {
+    background: #e9ecef;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-container {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-header {
+        padding: 1rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .school-info {
+        padding: 1rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
