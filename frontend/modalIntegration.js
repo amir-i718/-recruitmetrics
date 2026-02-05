@@ -57,11 +57,44 @@ async function openCollegeModal(schoolId) {
             </div>
         `;
         
-        const modalTitle = document.querySelector('.modal-title');
-        if (modalTitle) modalTitle.textContent = schoolData.name || 'School Details';
-        
         const modalContent = document.querySelector('.modal-content');
         if (modalContent) modalContent.innerHTML = content;
+
+        // Apply school color gradient border to modal container
+        const modalContainer = document.querySelector('.modal-container');
+        if (modalContainer && schoolData.primary_color && schoolData.secondary_color) {
+            const primaryColor = schoolData.primary_color;
+            const secondaryColor = schoolData.secondary_color;
+            
+            // Reset any existing styles to ensure clean application
+            modalContainer.style.background = '#1a1a1a';
+            modalContainer.style.borderRadius = '16px';
+            
+            // Apply horizontal gradient border using border-image (border only)
+            modalContainer.style.border = '10px solid';
+            modalContainer.style.borderImage = `linear-gradient(90deg, ${primaryColor} 0%, ${secondaryColor} 100%) 1`;
+            
+            // Maintain original shadow without color interference
+            modalContainer.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.4)';
+            
+            // Store school colors as CSS custom properties for reference
+            modalContainer.style.setProperty('--school-primary', primaryColor);
+            modalContainer.style.setProperty('--school-secondary', secondaryColor);
+            
+            console.log(`Applied school border colors: ${primaryColor} → ${secondaryColor} for ${schoolData.name}`);
+        } else {
+            // Fallback to default gradient border if no school colors available
+            const modalContainer = document.querySelector('.modal-container');
+            if (modalContainer) {
+                modalContainer.style.background = '#1a1a1a';
+                modalContainer.style.borderRadius = '16px';
+                modalContainer.style.border = '6px solid';
+                modalContainer.style.borderImage = 'linear-gradient(90deg, #7BAFD4 0%, #4F90C6 100%) 1';
+                modalContainer.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.4)';
+                
+                console.log(`Applied default border colors for ${schoolData.name || 'Unknown School'}`);
+            }
+        }
 
     } catch (error) {
         const errorContent = `
@@ -73,6 +106,18 @@ async function openCollegeModal(schoolId) {
         `;
         const modalContent = document.querySelector('.modal-content');
         if (modalContent) modalContent.innerHTML = errorContent;
+        
+        // Apply default gradient border on error
+        const modalContainer = document.querySelector('.modal-container');
+        if (modalContainer) {
+            modalContainer.style.background = '#1a1a1a';
+            modalContainer.style.borderRadius = '16px';
+            modalContainer.style.border = '6px solid';
+            modalContainer.style.borderImage = 'linear-gradient(90deg, #7BAFD4 0%, #4F90C6 100%) 1';
+            modalContainer.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.4)';
+            
+            console.log('Applied default border colors due to error');
+        }
     }
 }
 

@@ -1253,7 +1253,7 @@ width: 100vw;
 
 .modal-container {
     background: #1a1a1a;
-    border-radius: 12px;
+    border-radius: 16px;
     max-width: 700px;
     width: 90%;
     max-height: 85vh;
@@ -1261,6 +1261,16 @@ width: 100vw;
     transform: scale(0.9);
     transition: transform 0.3s ease;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    
+    /* Default border styling - will be overridden by JavaScript */
+    border: 10px solid;
+    border-image: linear-gradient(90deg, #7BAFD4 0%, #4F90C6 100%) 1;
+}
+
+/* Remove the pseudo-element approach that was affecting the background */
+.modal-container::before {
+    display: none;
 }
 
 .modal-open .modal-container {
